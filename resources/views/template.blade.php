@@ -6,7 +6,11 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+        @php
+            $hasViteAssets = file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot'));
+        @endphp
+
+        @if ($hasViteAssets)
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
             <style>
@@ -16,12 +20,14 @@
 
         @yield('heads')
     </head>
-    <body class="bg-[#fffaf7] text-[#3d2a24] antialiased">
+    <body class="bg-[#fffaf7] pt-[73px] text-[#3d2a24] antialiased">
         @include('containers.common.header')
 
         @yield('body')
 
-        <script src="{{ asset('js/app.js') }}"></script>
+        @if (! $hasViteAssets)
+            <script src="{{ asset('js/app.js') }}"></script>
+        @endif
 
         @yield('scripts')
     </body>

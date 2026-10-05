@@ -1,4 +1,4 @@
-<header class="border-b border-[#eadfd9] bg-[#fffaf7]">
+<header class="fixed inset-x-0 top-0 z-50 border-b border-[#eadfd9] bg-[#fffaf7]/95 shadow-sm backdrop-blur-sm">
     <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10" aria-label="Navegação principal">
         <a href="{{ route('home') }}" class="flex shrink-0 items-center gap-2" aria-label="Patas & Lar - início">
             <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#b63817] text-white" aria-hidden="true">
@@ -14,7 +14,7 @@
             </svg>
         </button>
 
-        <div id="main-menu" class="absolute inset-x-0 top-18.25 z-10 hidden border-b border-[#eadfd9] bg-[#fffaf7] px-5 py-5 shadow-lg lg:static lg:flex lg:items-center lg:gap-7 lg-gap lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none" data-menu>
+        <div id="main-menu" class="absolute inset-x-0 top-full z-10 hidden border-b border-[#eadfd9] bg-[#fffaf7] px-5 py-5 shadow-lg lg:static lg:flex lg:items-center lg:gap-7 lg-gap lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none" data-menu>
             <div class="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-2.5">
                 <a href="#inicio" class="rounded-md px-2 py-2 text-sm font-medium transition hover:bg-[#f4e8e1] hover:text-[#b63817] lg:px-2 lg:py-1">Início</a>
                 <a href="#adotar" class="rounded-md px-2 py-2 text-sm font-medium transition hover:bg-[#f4e8e1] hover:text-[#b63817] lg:px-2 lg:py-1">Quero Adotar</a>
