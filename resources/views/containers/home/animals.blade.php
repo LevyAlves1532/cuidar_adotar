@@ -20,7 +20,7 @@
                 'image' => 'https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=700&q=85',
                 'status' => 'Castrada & Vacinada',
                 'gender' => 'Fêmea',
-                'genderColor' => 'bg-[#ffd9d6] text-[#b63817]',
+                'genderColor' => 'white-red',
             ])
             @endcomponent
 
@@ -34,6 +34,7 @@
                 'image' => 'https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=700&q=85',
                 'status' => 'Apto para Apartamento',
                 'gender' => 'Macho',
+                'genderColor' => 'white-green',
             ])
             @endcomponent
 
@@ -47,7 +48,7 @@
                 'image' => 'https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=700&q=85',
                 'status' => 'Resgate Recente',
                 'gender' => 'Fêmea',
-                'genderColor' => 'bg-[#ffd9d6] text-[#b63817]',
+                'genderColor' => 'white-red',
             ])
             @endcomponent
 
@@ -61,6 +62,7 @@
                 'image' => 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=85',
                 'status' => 'Sênior Doce',
                 'gender' => 'Macho',
+                'genderColor' => 'white-green',
             ])
             @endcomponent
         </div>

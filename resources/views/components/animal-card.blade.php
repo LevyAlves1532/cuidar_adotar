@@ -15,9 +15,14 @@
 <article class="flex min-w-0 flex-col rounded-2xl border border-white bg-white p-2.5 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(104,56,38,0.12)] sm:p-3">
     <div class="relative aspect-[1.08/1] overflow-hidden rounded-xl bg-[#f4e4dc]">
         <img src="{{ $image }}" alt="{{ $name }} aguardando adoção" class="h-full w-full object-cover object-center" loading="lazy" />
-        <span class="absolute left-2 top-2 max-w-[calc(100%-3rem)] truncate rounded-full bg-[#356442] px-2 py-1 text-[9px] font-semibold text-white shadow-sm sm:text-[10px]">
-            {{ $status }}
-        </span>
+        <div class="absolute left-2 top-2 max-w-[calc(100%-3rem)]">
+            @component('components.tag', [
+                'label' => $status,
+                'color' => 'green',
+                'customSize' => '10px',
+            ])
+            @endcomponent
+        </div>
         <button type="button" class="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-[#8c6b60] shadow-sm transition hover:bg-white hover:text-[#b63817] focus:outline-none focus:ring-2 focus:ring-[#b63817]" aria-label="Favoritar {{ $name }}">
             <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M20.8 8.8c0 4.2-4.8 7.2-8.8 10.2C8 16 3.2 13 3.2 8.8A4.3 4.3 0 0 1 7.5 4.5c1.7 0 3.3 1 4.5 2.4 1.2-1.4 2.8-2.4 4.5-2.4a4.3 4.3 0 0 1 4.3 4.3Z" />
@@ -28,7 +33,12 @@
     <div class="flex flex-1 flex-col px-1 pt-2">
         <div class="flex items-start justify-between gap-2">
             <h3 class="truncate font-serif text-lg font-bold leading-tight text-[#261714] sm:text-xl">{{ $name }}</h3>
-            <span class="shrink-0 rounded-full px-2 py-0.5 text-[9px] font-semibold {{ $genderColor }}">{{ $gender }}</span>
+            @component('components.tag', [
+                'label' => $gender,
+                'color' => $genderColor,
+                'customSize' => '9px',
+            ])
+            @endcomponent
         </div>
 
         <div class="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-[10px] text-[#704f45] fill-[#704f45] sm:text-[11px]">

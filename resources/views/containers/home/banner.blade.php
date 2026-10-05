@@ -1,11 +1,14 @@
 <section id="inicio" class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-10 lg:py-20" aria-labelledby="hero-title">
     <div class="max-w-2xl">
-        <span class="inline-flex items-center gap-2 rounded-full bg-[#d9f0d2] px-3 py-1 text-xs font-medium text-[#356442]">
-            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4" />
-            </svg>
-            Conexão consciente entre protetores e lares
-        </span>
+        @component('components.tag', [
+            'label' => 'Conexão consciente entre protetores e lares',
+        ])
+            @slot('iconLeft')
+                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4" />
+                </svg>
+            @endslot
+        @endcomponent
 
         <h1 id="hero-title" class="mt-6 font-serif text-3xl font-bold leading-[0.98] tracking-tight text-[#17110f] sm:text-4xl lg:text-5xl">
             Todo Amigo Merece
