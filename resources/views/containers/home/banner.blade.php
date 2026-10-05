@@ -17,29 +17,41 @@
         </p>
 
         <dl class="mt-7 grid max-w-xl grid-cols-3 gap-2 sm:gap-3">
-            <div class="rounded-xl border border-[#f0e2dc] bg-white px-3 py-4 shadow-sm sm:px-4">
-                <dt class="text-xs text-[#8c6b60] sm:text-sm">Vidas Transformadas</dt>
-                <dd class="mt-1 font-serif text-2xl font-bold text-[#b63817] sm:text-3xl">+4.200</dd>
-            </div>
-            <div class="rounded-xl border border-[#f0e2dc] bg-white px-3 py-4 shadow-sm sm:px-4">
-                <dt class="text-xs text-[#8c6b60] sm:text-sm">Lares Definitivos</dt>
-                <dd class="mt-1 font-serif text-2xl font-bold text-[#b63817] sm:text-3xl">99,2%</dd>
-            </div>
-            <div class="rounded-xl border border-[#f0e2dc] bg-white px-3 py-4 shadow-sm sm:px-4">
-                <dt class="text-xs text-[#8c6b60] sm:text-sm">ONGs Parceiras</dt>
-                <dd class="mt-1 font-serif text-2xl font-bold text-[#b63817] sm:text-3xl">+350</dd>
-            </div>
+            @component('components.stat', [
+                'label' => 'Vidas Transformadas',
+                'value' => '+4.200',
+            ])
+            @endcomponent
+            @component('components.stat', [
+                'label' => 'Lares Definitivos',
+                'value' => '99,2%',
+            ])
+            @endcomponent
+            @component('components.stat', [
+                'label' => 'ONGs Parceiras',
+                'value' => '+350',
+            ])
+            @endcomponent
         </dl>
 
         <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a href="#adotar" class="inline-flex items-center justify-center gap-2 rounded-full bg-[#b63817] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#922d12] focus:outline-none focus:ring-2 focus:ring-[#b63817] focus:ring-offset-2">
-                <svg class="h-4 w-4" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M298.5 156.9C312.8 199.8 298.2 243.1 265.9 253.7C233.6 264.3 195.8 238.1 181.5 195.2C167.2 152.3 181.8 109 214.1 98.4C246.4 87.8 284.2 114 298.5 156.9zM164.4 262.6C183.3 295 178.7 332.7 154.2 346.7C129.7 360.7 94.5 345.8 75.7 313.4C56.9 281 61.4 243.3 85.9 229.3C110.4 215.3 145.6 230.2 164.4 262.6zM133.2 465.2C185.6 323.9 278.7 288 320 288C361.3 288 454.4 323.9 506.8 465.2C510.4 474.9 512 485.3 512 495.7L512 497.3C512 523.1 491.1 544 465.3 544C453.8 544 442.4 542.6 431.3 539.8L343.3 517.8C328 514 312 514 296.7 517.8L208.7 539.8C197.6 542.6 186.2 544 174.7 544C148.9 544 128 523.1 128 497.3L128 495.7C128 485.3 129.6 474.9 133.2 465.2zM485.8 346.7C461.3 332.7 456.7 295 475.6 262.6C494.5 230.2 529.6 215.3 554.1 229.3C578.6 243.3 583.2 281 564.3 313.4C545.4 345.8 510.3 360.7 485.8 346.7zM374.1 253.7C341.8 243.1 327.2 199.8 341.5 156.9C355.8 114 393.6 87.8 425.9 98.4C458.2 109 472.8 152.3 458.5 195.2C444.2 238.1 406.4 264.3 374.1 253.7z" /></svg>
-                Quero Adotar um Pet
-            </a>
-            <a href="#como-funciona" class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium text-[#704f45] transition hover:bg-white/70 hover:text-[#b63817] focus:outline-none focus:ring-2 focus:ring-[#b63817]">
-                <span class="flex h-5 w-5 items-center justify-center rounded-full border border-[#b63817] text-xs font-bold text-[#b63817]">i</span>
-                Como Funciona
-            </a>
+            @component('components.button', [
+                'url' => '#adotar',
+                'label' => 'Quero Adotar um Pet',
+            ])
+                @slot('iconLeft')
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M298.5 156.9C312.8 199.8 298.2 243.1 265.9 253.7C233.6 264.3 195.8 238.1 181.5 195.2C167.2 152.3 181.8 109 214.1 98.4C246.4 87.8 284.2 114 298.5 156.9zM164.4 262.6C183.3 295 178.7 332.7 154.2 346.7C129.7 360.7 94.5 345.8 75.7 313.4C56.9 281 61.4 243.3 85.9 229.3C110.4 215.3 145.6 230.2 164.4 262.6zM133.2 465.2C185.6 323.9 278.7 288 320 288C361.3 288 454.4 323.9 506.8 465.2C510.4 474.9 512 485.3 512 495.7L512 497.3C512 523.1 491.1 544 465.3 544C453.8 544 442.4 542.6 431.3 539.8L343.3 517.8C328 514 312 514 296.7 517.8L208.7 539.8C197.6 542.6 186.2 544 174.7 544C148.9 544 128 523.1 128 497.3L128 495.7C128 485.3 129.6 474.9 133.2 465.2zM485.8 346.7C461.3 332.7 456.7 295 475.6 262.6C494.5 230.2 529.6 215.3 554.1 229.3C578.6 243.3 583.2 281 564.3 313.4C545.4 345.8 510.3 360.7 485.8 346.7zM374.1 253.7C341.8 243.1 327.2 199.8 341.5 156.9C355.8 114 393.6 87.8 425.9 98.4C458.2 109 472.8 152.3 458.5 195.2C444.2 238.1 406.4 264.3 374.1 253.7z"/></svg>
+                @endslot
+            @endcomponent
+            @component('components.button', [
+                'url' => '#como-funciona',
+                'label' => 'Como Funciona',
+                'color' => 'white',
+            ])
+                @slot('iconLeft')
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM288 224C288 206.3 302.3 192 320 192C337.7 192 352 206.3 352 224C352 241.7 337.7 256 320 256C302.3 256 288 241.7 288 224zM280 288L328 288C341.3 288 352 298.7 352 312L352 400L360 400C373.3 400 384 410.7 384 424C384 437.3 373.3 448 360 448L280 448C266.7 448 256 437.3 256 424C256 410.7 266.7 400 280 400L304 400L304 336L280 336C266.7 336 256 325.3 256 312C256 298.7 266.7 288 280 288z"/></svg>
+                @endslot
+            @endcomponent
         </div>
     </div>
 
