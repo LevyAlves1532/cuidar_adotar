@@ -5,5 +5,6 @@
 		@include('containers.home.banner')
 		@include('containers.home.animal-filter')
 		@include('containers.home.categories')
+		@include('containers.home.animals')
 	</main>
 @endsection
