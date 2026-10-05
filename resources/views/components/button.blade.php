@@ -3,6 +3,8 @@
     'label' => '',
     'iconLeft' => null,
     'color' => 'default',
+    'tag' => 'anchor',
+    'type' => 'button',
 ])
 
 @php
@@ -12,7 +14,17 @@
     };
 @endphp
 
-<a href="{{ $url }}" class="mt-4 inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 lg:mt-0 {{ $classColor }}">
-    {{ $iconLeft  }}
-    {{ $label }}
-</a>
+@switch($tag)
+    @case('button')
+        <button type="{{ $type }}" class="cursor-pointer mt-4 inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 lg:mt-0 {{ $classColor }}">
+            {{ $iconLeft  }}
+            {{ $label }}
+        </button>
+        @break
+
+    @default
+        <a href="{{ $url }}" class="mt-4 inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 lg:mt-0 {{ $classColor }}">
+            {{ $iconLeft  }}
+            {{ $label }}
+        </a>
+@endswitch
