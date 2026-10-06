@@ -13,4 +13,13 @@
 		@include('containers.home.how-it-works')
 		@include('containers.home.rescuer-callout')
 	</div>
+
+	<div class="overflow-hidden bg-linear-to-br from-[#fffaf2] via-[#fff4ef] to-[#ffebe5]">
+		@include('containers.home.testimonials')
+	</div>
+@endsection
+
+@section('scripts')
+	<script src="https://cdn.jsdelivr.net/npm/embla-carousel@8.6.0/embla-carousel.umd.js" defer></script>
+	<script src="{{ asset('js/pages/home.js') }}" defer></script>
 @endsection
