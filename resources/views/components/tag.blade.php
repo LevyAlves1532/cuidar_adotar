@@ -14,7 +14,7 @@
     };
 @endphp
 
-<span class="inline-flex items-center gap-2 rounded-full px-3 py-1 {{ $customSize ? 'text-[' . $customSize . ']' : 'text-xs' }} font-medium {{ $classColor }}">
+<span style="{{ $customSize ? 'font-size: ' . $customSize . ';' : '' }}" class="inline-flex items-center gap-2 rounded-full px-3 py-1 {{ $customSize ? '' : 'text-xs' }} font-medium {{ $classColor }}">
     {{ $iconLeft }}
     {{ $label }}
 </span>

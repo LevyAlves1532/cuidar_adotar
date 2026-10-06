@@ -6,5 +6,6 @@
 		@include('containers.home.animal-filter')
 		@include('containers.home.categories')
 		@include('containers.home.animals')
+		@include('containers.home.responsible-adoption')
 	</main>
 @endsection
