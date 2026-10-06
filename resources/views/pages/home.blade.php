@@ -11,5 +11,6 @@
 	<div class="overflow-hidden bg-white">
 		@include('containers.home.responsible-adoption')
 		@include('containers.home.how-it-works')
+		@include('containers.home.rescuer-callout')
 	</div>
 @endsection
