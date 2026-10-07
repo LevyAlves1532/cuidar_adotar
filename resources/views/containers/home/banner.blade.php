@@ -39,7 +39,7 @@
 
         <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
             @component('components.button', [
-                'url' => '#adotar',
+                'url' => route('catalog'),
                 'label' => 'Quero Adotar um Pet',
             ])
                 @slot('iconLeft')

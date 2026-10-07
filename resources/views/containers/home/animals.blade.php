@@ -6,7 +6,7 @@
                 <h2 id="animals-title" class="mt-1 font-serif text-3xl font-bold leading-tight tracking-tight text-[#261714] sm:text-4xl">Eles Estão Esperando Por Você</h2>
                 <p class="mt-1 max-w-lg text-sm leading-5 text-[#704f45]">Cada olhar carrega uma história de superação. Conheça estes amigos ansiosos por um lar aconchegante.</p>
             </div>
-            <a href="#adotar" class="inline-flex items-center gap-1 self-start text-xs font-semibold text-[#b63817] transition hover:text-[#922d12] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b63817] focus-visible:ring-offset-2 sm:self-auto">Explorar todos os 280+ pets <span aria-hidden="true">→</span></a>
+            <a href="{{ route('catalog') }}" class="inline-flex items-center gap-1 self-start text-xs font-semibold text-[#b63817] transition hover:text-[#922d12] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b63817] focus-visible:ring-offset-2 sm:self-auto">Explorar todos os 280+ pets <span aria-hidden="true">→</span></a>
         </div>
 
         <div class="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -69,7 +69,7 @@
 
         <div class="mt-7 flex justify-center">
             @component('components.button', [
-                'url' => '#adotar',
+                'url' => route('catalog'),
                 'label' => 'Ver Todos os Amigos Disponíveis',
             ])
                 @slot('iconLeft')

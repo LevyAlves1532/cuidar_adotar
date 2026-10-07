@@ -23,7 +23,7 @@
                 <a href="#sobre" class="rounded-md px-2 py-2 text-sm font-medium transition hover:bg-[#f4e8e1] hover:text-[#b63817] lg:px-2 lg:py-1">Sobre Nós</a>
             </div>
             @component('components.button', [
-                'url' => '#encontrar-pet',
+                'url' => route('catalog'),
                 'label' => 'Encontrar Pet',
             ])
                 @slot('iconLeft')

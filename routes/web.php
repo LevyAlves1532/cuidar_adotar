@@ -8,3 +8,6 @@ Route::get('/', function () {
 
 Route::get('/', fn () => view('pages.home'))
     ->name('home');
+
+Route::get('/catalogo', fn () => view('pages.catalog'))
+    ->name('catalog');
