@@ -25,6 +25,8 @@
 
         @yield('body')
 
+        @include('containers.common.footer')
+
         @if (! $hasViteAssets)
             <script src="{{ asset('js/app.js') }}"></script>
         @endif
