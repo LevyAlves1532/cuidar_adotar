@@ -9,8 +9,8 @@
 
         <div class="mx-auto mt-5 grid max-w-3xl gap-2.5 sm:mt-6 sm:gap-3">
             @component('components.faq-item', [
-                'question' => 'Há taxa de adoção na Patas & Lar?',
-                'answer' => 'A Patas & Lar não cobra pela adoção. Cada ONG ou protetor parceiro pode ter orientações próprias sobre os custos de cuidados veterinários; confirme os detalhes diretamente com quem está responsável pelo pet.',
+                'question' => 'Há taxa de adoção na Cuidar & Adotar?',
+                'answer' => 'A Cuidar & Adotar não cobra pela adoção. Cada ONG ou protetor parceiro pode ter orientações próprias sobre os custos de cuidados veterinários; confirme os detalhes diretamente com quem está responsável pelo pet.',
             ])
             @endcomponent
 

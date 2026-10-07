@@ -50,7 +50,7 @@
         @endcomponent
 
         @component('components.category-card', [
-            'label' => 'Sêniores & Calmos',
+            'label' => 'Sêniores',
             'available' => '+30',
             'iconBackground' => 'bg-[#eee9e5]',
             'iconColor' => 'text-[#40342f]',
@@ -64,7 +64,7 @@
         @endcomponent
 
         @component('components.category-card', [
-            'label' => 'Patinhas Especiais',
+            'label' => 'Cachorros Grandões',
             'available' => '+15',
             'iconBackground' => 'bg-[#ffd9d6]',
             'iconColor' => 'text-[#d04d45]',

@@ -16,9 +16,9 @@
                     @endslot
                 @endcomponent
 
-                <h2 id="rescuer-callout-title" class="mt-3 font-serif text-2xl font-bold leading-tight tracking-tight text-[#fffaf7] sm:text-3xl lg:text-[2rem]">
+                <h2 id="rescuer-callout-title" class="mt-3 font-serif text-xl font-bold leading-tight tracking-tight text-[#fffaf7] sm:text-2xl lg:text-[1.95rem]">
                     Tem animais resgatados sob seus cuidados?
-                    <span class="block">Divulgue gratuitamente na Patas &amp; Lar.</span>
+                    <span class="block">Divulgue gratuitamente na Cuidar &amp; Adotar.</span>
                 </h2>
                 <p class="mt-2 max-w-2xl text-xs leading-5 text-[#fff1e9] sm:text-sm">
                     Nossa plataforma conecta seu trabalho voluntário com milhares de famílias interessadas todos os meses. Tenha controle dos formulários de adoção, acompanhamento e visibilidade sem custo algum.

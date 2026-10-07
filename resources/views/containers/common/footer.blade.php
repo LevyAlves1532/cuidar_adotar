@@ -9,7 +9,7 @@
             </a>
             <p class="mt-4 max-w-xs text-sm leading-6 text-[#d8cfca]">Conectando corações e lares responsáveis. Nossa missão é transformar o resgate em recomeço digno, com saúde, respeito e carinho incondicional para cada animal.</p>
 
-            <div class="mt-5 flex items-center gap-2" aria-label="Redes sociais">
+            {{-- <div class="mt-5 flex items-center gap-2" aria-label="Redes sociais">
                 <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-[#625853] text-[#fffaf7] transition hover:bg-[#b63817] focus:outline-none focus:ring-2 focus:ring-[#e8a48f]" aria-label="Instagram">
                     <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm8.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" /></svg>
                 </a>
@@ -19,7 +19,7 @@
                 <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-[#625853] text-[#fffaf7] transition hover:bg-[#b63817] focus:outline-none focus:ring-2 focus:ring-[#e8a48f]" aria-label="YouTube">
                     <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.9 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" /></svg>
                 </a>
-            </div>
+            </div> --}}
         </div>
 
         <div>
@@ -34,17 +34,17 @@
         </div>
 
         <div>
-            <h2 class="text-sm font-bold text-white">Apoio &amp; Proteção</h2>
+            {{-- <h2 class="text-sm font-bold text-white">Apoio &amp; Proteção</h2>
             <nav class="mt-4 flex flex-col items-start gap-2 text-xs text-[#d8cfca]" aria-label="Links de apoio">
                 <a href="#denuncias" class="transition hover:text-white">Canal de Denúncias</a>
                 <a href="#protetores" class="transition hover:text-white">Cuide do Tutor Responsável</a>
                 <a href="#parceiros" class="transition hover:text-white">Clínicas Parceiras</a>
                 <a href="#ajuda" class="transition hover:text-white">Termos de Adesão</a>
-            </nav>
+            </nav> --}}
         </div>
 
         <div>
-            <h2 class="text-sm font-bold text-white">Novos Resgates</h2>
+            {{-- <h2 class="text-sm font-bold text-white">Novos Resgates</h2>
             <p class="mt-4 text-xs leading-5 text-[#d8cfca]">Receba alertas e histórias de novos animais que acabaram de chegar.</p>
             <form class="mt-3 flex overflow-hidden rounded-full border border-[#776a64] bg-[#443b37] focus-within:ring-2 focus-within:ring-[#e8a48f]" action="#" method="post">
                 <label class="sr-only" for="footer-email">Seu e-mail</label>
@@ -53,12 +53,12 @@
                     <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.7 3.3-19 7.6a1 1 0 0 0 .1 1.9l7.6 2.5 2.5 7.6a1 1 0 0 0 1.9.1l7.6-19a1 1 0 0 0-1.2-1.2ZM5.8 11.7l11.3-4.5-6.9 6.2-4.4-1.7Zm8.3 7-1.5-4.5 6.2-6.9-4.7 11.4Z" /></svg>
                 </button>
             </form>
-            <p class="mt-2 text-[10px] leading-4 text-[#b8aaa4]">Prometemos enviar apenas histórias felizes.</p>
+            <p class="mt-2 text-[10px] leading-4 text-[#b8aaa4]">Prometemos enviar apenas histórias felizes.</p> --}}
         </div>
     </div>
 
     <div class="mx-auto flex max-w-7xl flex-col gap-3 border-t border-[#514743] px-5 py-5 text-[10px] text-[#b8aaa4] sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
-        <p>© {{ date('Y') }} Patas &amp; Lar. Amor, proteção e responsabilidade animal.</p>
+        <p>© {{ date('Y') }} Cuidar &amp; Adotar. Amor, proteção e responsabilidade animal.</p>
         <div class="flex gap-4">
             <a href="#privacidade" class="transition hover:text-white">Privacidade</a>
             <a href="#termos" class="transition hover:text-white">Termos</a>

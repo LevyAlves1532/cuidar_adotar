@@ -19,7 +19,7 @@
             Acreditamos que o resgate é só o primeiro passo. Criamos pontes seguras, carinhosas e responsáveis para transformar a vida de cães e gatos em recomeços para sempre.
         </p>
 
-        <dl class="mt-7 grid max-w-xl grid-cols-3 gap-2 sm:gap-3">
+        {{-- <dl class="mt-7 grid max-w-xl grid-cols-3 gap-2 sm:gap-3">
             @component('components.stat', [
                 'label' => 'Vidas Transformadas',
                 'value' => '+4.200',
@@ -35,7 +35,7 @@
                 'value' => '+350',
             ])
             @endcomponent
-        </dl>
+        </dl> --}}
 
         <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
             @component('components.button', [

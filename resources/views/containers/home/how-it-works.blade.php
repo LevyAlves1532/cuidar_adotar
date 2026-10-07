@@ -2,7 +2,7 @@
     <div class="mx-auto max-w-md text-center">
         <p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#b63817] sm:text-xs">Passo a passo transparente</p>
         <h2 id="how-it-works-title" class="mt-2 font-serif text-2xl font-bold leading-tight tracking-tight text-[#17110f] sm:text-3xl">
-            Como Funciona a Adoção na Patas &amp; Lar
+            Como Funciona a Adoção na Cuidar &amp; Adotar
         </h2>
         <p class="mt-2 text-xs leading-5 text-[#704f45] sm:text-sm">
             Um processo simples, humano e com o bem-estar do pet como prioridade absoluta.
@@ -29,8 +29,8 @@
         @component('components.adoption-step-card', [
             'number' => '02',
             'title' => 'Conheça o Histórico',
-            'description' => 'Acesse o histórico clínico, fotos, vídeos e notas de temperamento preparadas por quem resgatou.',
-            'footnote' => 'Perfil médico verificado',
+            'description' => 'Acesse mais informações do animal de seu interesse e fotos preparadas por quem resgatou.',
+            'footnote' => 'Perfil verificado',
         ])
             @slot('icon')
                 <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -43,8 +43,8 @@
         @component('components.adoption-step-card', [
             'number' => '03',
             'title' => 'Envie a Intenção',
-            'description' => 'Preencha um questionário carinhoso contando sobre sua residência, rotina e experiência com animais.',
-            'footnote' => 'Resposta em até 48h úteis',
+            'description' => 'Preencha um questionário de interesse pelo animal.',
+            'footnote' => 'Notifique quem adotou',
         ])
             @slot('icon')
                 <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -55,9 +55,9 @@
 
         @component('components.adoption-step-card', [
             'number' => '04',
-            'title' => 'Encontro & Adoção',
-            'description' => 'Agende uma visita com a ONG ou protetor, assine o termo de responsabilidade e dê as boas-vindas ao novo amigo!',
-            'footnote' => 'Início de uma nova história',
+            'title' => 'Contato pelo WhatsApp',
+            'description' => 'Quem resgatou o animal fica encarregado de entrar em contato com você, aguarde a mensagem no seu WhatsApp e prossiga com o processo de adoção!',
+            'footnote' => 'Uma nova história está preste a começar',
         ])
             @slot('icon')
                 <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
