@@ -1,4 +1,4 @@
-<section class="mx-auto max-w-7xl px-5 py-8 sm:px-8 sm:py-10 lg:px-10" aria-labelledby="responsible-adoption-title">
+<section id="guia-adotante" class="mx-auto max-w-7xl px-5 py-8 sm:px-8 sm:py-10 lg:px-10" aria-labelledby="responsible-adoption-title">
     <div class="rounded-2xl bg-[#eef1e6] p-5 sm:rounded-3xl sm:p-7 lg:p-8">
         @component('components.tag', [
             'label' => 'Compromisso Ético',

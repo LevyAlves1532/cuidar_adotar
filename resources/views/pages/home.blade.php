@@ -16,6 +16,7 @@
 
 	<div class="overflow-hidden bg-linear-to-br from-[#fffaf2] via-[#fff4ef] to-[#ffebe5]">
 		@include('containers.home.testimonials')
+		@include('containers.home.faq')
 	</div>
 @endsection
 
