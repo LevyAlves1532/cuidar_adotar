@@ -5,3 +5,7 @@
 		@include('containers.catalog.banner')
 	</main>
 @endsection
+
+@section('scripts')
+	<script src="{{ asset('js/pages/catalog.js') }}"></script>
+@endsection

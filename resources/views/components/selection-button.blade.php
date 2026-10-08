@@ -24,7 +24,7 @@
     };
 @endphp
 
-<a href="{{ $url }}" {{ $attributes->merge(['class' => 'inline-flex min-h-10 shrink-0 items-center justify-center gap-2 rounded-full border px-4 py-2 text-xs font-medium transition focus:outline-none focus:ring-2 focus:ring-[#b63817] focus:ring-offset-2 sm:px-5 ' . $classColor]) }} @if($active) aria-current="page" @endif>
+<a href="{{ $url }}" {{ $attributes->merge(['class' => 'inline-flex min-h-10 shrink-0 items-center justify-center gap-2 rounded-full border px-4 py-2 text-xs font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b63817] focus-visible:ring-offset-0 sm:px-5 ' . $classColor]) }} @if($active) aria-current="page" @endif>
     @if ($icon)
         <span class="flex h-4 w-4 items-center justify-center" aria-hidden="true">{!! $icon !!}</span>
     @endif
