@@ -1,0 +1,70 @@
+<section class="mx-auto w-full max-w-7xl px-5 pb-8 sm:px-8 lg:px-10 lg:pb-12">
+    <div class="grid gap-6 lg:grid-cols-[1.7fr_1fr] lg:items-stretch xl:gap-8">
+        <article class="flex h-full flex-col rounded-[1.5rem] border border-[#ead8d0] bg-white p-5 shadow-[0_14px_30px_rgba(123,87,69,0.06)] sm:p-6">
+            <div class="flex items-start gap-3">
+                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fff0e8] text-[#b63817]">
+                    <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 3a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7V3Zm1 0v8h8v-2h-6V3h-2Zm-5.5 8.5A1.5 1.5 0 1 0 9 13a1.5 1.5 0 0 0-1.5-1.5Zm9 0A1.5 1.5 0 1 0 18 13a1.5 1.5 0 0 0-1.5-1.5ZM9 16h6a3 3 0 0 1-6 0Z" />
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="font-serif text-xl font-bold leading-tight text-[#261714] sm:text-2xl">História de Superação da Amora</h2>
+                    <p class="mt-2 text-[11px] leading-5 text-[#704f45] sm:text-xs">Em uma noite chuvosa de novembro, Amora foi resgatada de uma situação de abandono na Zona Sul de São Paulo.</p>
+                </div>
+            </div>
+
+            <div class="mt-4 space-y-3 text-[11px] leading-5 text-[#704f45] sm:text-xs">
+                <p>Assustada e com fome, ela encontrou acolhimento emergencial da equipe da ONG Patinhas da Vila. Desde então, recebeu cuidados veterinários, alimentação e muito carinho.</p>
+                <p>Hoje, Amora está saudável, brincalhona e pronta para começar uma nova história em um lar responsável, seguro e cheio de afeto.</p>
+            </div>
+
+            <div class="mt-auto pt-5">
+                <div class="grid grid-cols-3 divide-x divide-[#f4ddd3] overflow-hidden rounded-xl bg-[#fff4ef]">
+                <div class="px-2 py-3 text-center">
+                    <svg class="mx-auto h-4 w-4 text-[#b63817]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18" /></svg>
+                    <p class="mt-1 text-[9px] font-semibold text-[#4a3a35]">Extremamente Dócil</p>
+                    <p class="text-[8px] text-[#8c6b60]">Amorosa e tranquila</p>
+                </div>
+                <div class="px-2 py-3 text-center">
+                    <svg class="mx-auto h-4 w-4 text-[#356442]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4 4 16 16M7 7c-2 2-2 5 0 7m10-7c2 2 2 5 0 7M12 5v14" /></svg>
+                    <p class="mt-1 text-[9px] font-semibold text-[#4a3a35]">Super Carinhosa</p>
+                    <p class="text-[8px] text-[#8c6b60]">Busca companhia</p>
+                </div>
+                <div class="px-2 py-3 text-center">
+                    <svg class="mx-auto h-4 w-4 text-[#b63817]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 18h14M7 18v-5h10v5M9 13V9h6v4M11 9V6h2v3" /></svg>
+                    <p class="mt-1 text-[9px] font-semibold text-[#4a3a35]">Adaptação Rápida</p>
+                    <p class="text-[8px] text-[#8c6b60]">Aprende com facilidade</p>
+                </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="flex h-full flex-col rounded-[1.5rem] border border-[#ead8d0] bg-white p-5 shadow-[0_14px_30px_rgba(123,87,69,0.06)] sm:p-6">
+            <div class="flex items-start gap-3">
+                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fff0e8] text-[#b63817]">
+                    <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 15h-2v-2h2v2Zm2.1-6.8-.9.9c-.7.6-1.2 1.1-1.2 2.4h-2c0-1.8.7-2.7 1.7-3.6l1.1-1a1.8 1.8 0 0 0-1.2-3.1 1.9 1.9 0 0 0-1.9 1.8h-2a3.9 3.9 0 0 1 7.8.2 3.7 3.7 0 0 1-1.4 2.4Z" /></svg>
+                </div>
+                <div>
+                    <h2 class="font-serif text-xl font-bold leading-tight text-[#261714] sm:text-2xl">Requisitos de Tutela</h2>
+                    <p class="mt-2 text-[11px] leading-5 text-[#704f45] sm:text-xs">Para garantir o bem-estar da Amora, buscamos um adotante ou família que cumpra estes critérios simples.</p>
+                </div>
+            </div>
+
+            <ul class="mt-4 space-y-2 text-[10px] leading-4 text-[#4a3a35] sm:text-[11px]">
+                @foreach (['Ambiente seguro' => 'Casa com portão bem fechado e sem acesso à rua.', 'Compromisso' => 'Responsabilidade por 10 anos ou mais.', 'Condições financeiras' => 'Capacidade para cuidados veterinários.', 'Tempo e carinho' => 'Disponibilidade para adaptação e rotina.', 'Acompanhamento' => 'Aceitar notícias sobre a adaptação.'] as $title => $description)
+                    <li class="flex items-start gap-2">
+                        <span class="mt-0.5 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-[#d9f0d2] text-[#356442]">
+                            <svg class="h-2.5 w-2.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m9.3 16.7-4.7-4.7L6 10.6l3.3 3.3L18 5.2l1.4 1.4L9.3 16.7Z" /></svg>
+                        </span>
+                        <span><strong class="font-semibold text-[#356442]">{{ $title }}:</strong> {{ $description }}</span>
+                    </li>
+                @endforeach
+            </ul>
+
+            <div class="mt-4 flex items-start gap-2 rounded-lg bg-[#fff1ed] px-3 py-2 text-[9px] leading-4 text-[#9a3b27] sm:text-[10px]">
+                <svg class="mt-0.5 h-3 w-3 shrink-0 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z" /></svg>
+                <span><strong class="font-semibold">Não solicitamos nenhuma contribuição financeira</strong> ou taxa para adoção.</span>
+            </div>
+        </article>
+    </div>
+</section>

@@ -4,6 +4,7 @@
 	<main class="bg-[#fffaf7]">
 		@include('containers.animal.sub-heading')
 		@include('containers.animal.profile')
+		@include('containers.animal.story')
 	</main>
 @endsection
 
