@@ -5,6 +5,7 @@
 		@include('containers.animal.sub-heading')
 		@include('containers.animal.profile')
 		@include('containers.animal.story')
+		@include('containers.animal.how-it-works')
 	</main>
 @endsection
 

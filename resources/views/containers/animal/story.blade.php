@@ -1,6 +1,6 @@
 <section class="mx-auto w-full max-w-7xl px-5 pb-8 sm:px-8 lg:px-10 lg:pb-12">
     <div class="grid gap-6 lg:grid-cols-[1.7fr_1fr] lg:items-stretch xl:gap-8">
-        <article class="flex h-full flex-col rounded-[1.5rem] border border-[#ead8d0] bg-white p-5 shadow-[0_14px_30px_rgba(123,87,69,0.06)] sm:p-6">
+        <article id="historia-amora" class="flex h-full flex-col rounded-[1.5rem] border border-[#ead8d0] bg-white p-5 shadow-[0_14px_30px_rgba(123,87,69,0.06)] sm:p-6">
             <div class="flex items-start gap-3">
                 <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fff0e8] text-[#b63817]">
                     <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -39,7 +39,7 @@
             </div>
         </article>
 
-        <article class="flex h-full flex-col rounded-[1.5rem] border border-[#ead8d0] bg-white p-5 shadow-[0_14px_30px_rgba(123,87,69,0.06)] sm:p-6">
+        <article id="requisitos-tutela" class="flex h-full flex-col rounded-[1.5rem] border border-[#ead8d0] bg-white p-5 shadow-[0_14px_30px_rgba(123,87,69,0.06)] sm:p-6">
             <div class="flex items-start gap-3">
                 <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fff0e8] text-[#b63817]">
                     <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 15h-2v-2h2v2Zm2.1-6.8-.9.9c-.7.6-1.2 1.1-1.2 2.4h-2c0-1.8.7-2.7 1.7-3.6l1.1-1a1.8 1.8 0 0 0-1.2-3.1 1.9 1.9 0 0 0-1.9 1.8h-2a3.9 3.9 0 0 1 7.8.2 3.7 3.7 0 0 1-1.4 2.4Z" /></svg>

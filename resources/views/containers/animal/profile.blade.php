@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <aside class="rounded-[2rem] border border-[#ead8d0] bg-[#f9f4f1] p-4 shadow-[0_18px_36px_rgba(123,87,69,0.06)] sm:p-5 lg:p-6">
+        <aside id="adotar" class="rounded-[2rem] border border-[#ead8d0] bg-[#f9f4f1] p-4 shadow-[0_18px_36px_rgba(123,87,69,0.06)] sm:p-5 lg:p-6">
             <div class="mb-4 flex items-center justify-between gap-3">
                 <x-tag label="Fêmea" color="white-green" custom-size="11px" />
             </div>
