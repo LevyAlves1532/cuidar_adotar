@@ -80,8 +80,22 @@
         </div>
 
         <div class="flex flex-wrap gap-2 sm:shrink-0">
-            <x-button label="Ler Guia Completo" url="#requisitos-tutela" color="white-red" spacing="none" class="px-4 py-2 text-[10px]" />
-            <x-button label="Iniciar Adoção" url="#adotar" color="terracotta" spacing="none" class="px-4 py-2 text-[10px]" />
+            @component('components.button', [
+                'label' => 'Ler Guia Completo',
+                'url' => '#requisitos-tutela',
+                'color' => 'white-red',
+                'spacing' => 'none',
+                'customClass' => 'px-4 py-2 text-[10px]',
+            ])
+            @endcomponent
+            @component('components.button', [
+                'label' => 'Iniciar Adoção',
+                'url' => '#adotar',
+                'color' => 'terracotta',
+                'spacing' => 'none',
+                'customClass' => 'px-4 py-2 text-[10px]',
+            ])
+            @endcomponent
         </div>
     </div>
 </section>

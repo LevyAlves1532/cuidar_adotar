@@ -6,6 +6,7 @@
     'tag' => 'anchor',
     'type' => 'button',
     'spacing' => 'default',
+    'customClass' => '',
 ])
 
 @php
@@ -21,14 +22,14 @@
 
 @switch($tag)
     @case('button')
-        <button type="{{ $type }}" {{ $attributes->merge(['class' => 'cursor-pointer '.$classSpacing.' inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 '.$classColor]) }}>
+        <button type="{{ $type }}" {{ $attributes->merge(['class' => $customClass . ' cursor-pointer '.$classSpacing.' inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 '.$classColor]) }}>
             {{ $iconLeft ?: $slot }}
             {{ $label }}
         </button>
         @break
 
     @default
-        <a href="{{ $url }}" {{ $attributes->merge(['class' => $classSpacing.' inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 '.$classColor]) }}>
+        <a href="{{ $url }}" {{ $attributes->merge(['class' => $classSpacing.' inline-flex ' . $customClass . ' items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 '.$classColor]) }}>
             {{ $iconLeft ?: $slot }}
             {{ $label }}
         </a>

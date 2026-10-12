@@ -17,26 +17,6 @@
                 <p>Assustada e com fome, ela encontrou acolhimento emergencial da equipe da ONG Patinhas da Vila. Desde então, recebeu cuidados veterinários, alimentação e muito carinho.</p>
                 <p>Hoje, Amora está saudável, brincalhona e pronta para começar uma nova história em um lar responsável, seguro e cheio de afeto.</p>
             </div>
-
-            <div class="mt-auto pt-5">
-                <div class="grid grid-cols-3 divide-x divide-[#f4ddd3] overflow-hidden rounded-xl bg-[#fff4ef]">
-                <div class="px-2 py-3 text-center">
-                    <svg class="mx-auto h-4 w-4 text-[#b63817]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18" /></svg>
-                    <p class="mt-1 text-[9px] font-semibold text-[#4a3a35]">Extremamente Dócil</p>
-                    <p class="text-[8px] text-[#8c6b60]">Amorosa e tranquila</p>
-                </div>
-                <div class="px-2 py-3 text-center">
-                    <svg class="mx-auto h-4 w-4 text-[#356442]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4 4 16 16M7 7c-2 2-2 5 0 7m10-7c2 2 2 5 0 7M12 5v14" /></svg>
-                    <p class="mt-1 text-[9px] font-semibold text-[#4a3a35]">Super Carinhosa</p>
-                    <p class="text-[8px] text-[#8c6b60]">Busca companhia</p>
-                </div>
-                <div class="px-2 py-3 text-center">
-                    <svg class="mx-auto h-4 w-4 text-[#b63817]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 18h14M7 18v-5h10v5M9 13V9h6v4M11 9V6h2v3" /></svg>
-                    <p class="mt-1 text-[9px] font-semibold text-[#4a3a35]">Adaptação Rápida</p>
-                    <p class="text-[8px] text-[#8c6b60]">Aprende com facilidade</p>
-                </div>
-                </div>
-            </div>
         </article>
 
         <article id="requisitos-tutela" class="flex h-full flex-col rounded-[1.5rem] border border-[#ead8d0] bg-white p-5 shadow-[0_14px_30px_rgba(123,87,69,0.06)] sm:p-6">
