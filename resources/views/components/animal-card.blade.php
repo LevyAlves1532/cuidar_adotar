@@ -64,7 +64,7 @@
         <p class="mt-1 mb-4 line-clamp-2 min-h-8 text-[10px] leading-4 text-[#8c6b60] sm:text-[11px]">{{ $description }}</p>
 
         @component('components.button', [
-            'label' => 'Conhecer História',
+            'label' => "Conhecer {$name}",
             'url' => $url,
             'color' => 'secondary',
         ])
