@@ -6,6 +6,7 @@
 		@include('containers.animal.profile')
 		@include('containers.animal.story')
 		@include('containers.animal.how-it-works')
+		@include('containers.animal.support')
 	</main>
 @endsection
 
