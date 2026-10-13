@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Caregiver\Pages\CustomProfile;
+use Filament\Facades\Filament;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -62,9 +63,15 @@ class CaregiverPanelProvider extends PanelProvider
             ])
             ->renderHook(
                 PanelsRenderHook::BODY_START,
-                fn (): string => Blade::render(
-                    '@livewire(\\App\\Filament\\Caregiver\\Widgets\\ProfileCompletionModal::class)',
-                ),
+                function (): string {
+                    if (! Filament::auth()->check()) {
+                        return '';
+                    }
+
+                    return Blade::render(
+                        '@livewire(\\App\\Filament\\Caregiver\\Widgets\\ProfileCompletionModal::class)',
+                    );
+                },
             );
     }
 }

@@ -10,6 +10,7 @@ use Filament\Actions\Contracts\HasActions;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
 use Filament\Schemas\Concerns\InteractsWithSchemas;
 use Filament\Schemas\Contracts\HasSchemas;
 use Filament\Widgets\Widget;
@@ -74,6 +75,11 @@ class ProfileCompletionModal extends Widget implements HasActions, HasSchemas
                 /** @var User $user */
                 $user = Auth::user();
                 $user->update($data);
+                
+                Notification::make()
+                    ->title('Cadastro finalizado com sucesso!')
+                    ->success()
+                    ->send();
             });
     }
 
