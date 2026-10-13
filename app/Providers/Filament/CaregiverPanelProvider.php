@@ -28,15 +28,17 @@ class CaregiverPanelProvider extends PanelProvider
             ->id('caregiver')
             ->path('cuidador')
             ->login()
+            ->registration()
+            ->profile()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Orange,
             ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
+            ->discoverResources(in: app_path('Filament/Caregiver/Resources'), for: 'App\Filament\Caregiver\Resources')
+            ->discoverPages(in: app_path('Filament/Caregiver/Pages'), for: 'App\Filament\Caregiver\Pages')
             ->pages([
                 Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Caregiver/Widgets'), for: 'App\Filament\Caregiver\Widgets')
             ->widgets([
                 AccountWidget::class,
                 FilamentInfoWidget::class,
