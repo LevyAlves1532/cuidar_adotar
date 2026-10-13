@@ -27,7 +27,7 @@
 
             <div class="flex w-full flex-col gap-2 sm:flex-row lg:flex-col">
                 @component('components.button', [
-                    'url' => '#cadastrar',
+                    'url' => route('filament.caregiver.auth.login'),
                     'label' => 'Cadastrar Animal Agora',
                     'color' => 'white-red',
                     'spacing' => 'none',
@@ -40,7 +40,7 @@
                     @endslot
                 @endcomponent
 
-                @component('components.button', [
+                {{-- @component('components.button', [
                     'url' => '#sobre',
                     'label' => 'Conhecer Parcerias',
                     'color' => 'terracotta',
@@ -51,7 +51,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="m8 12 3-3a3 3 0 0 1 4 0l1 1m-8 2-1 1a2.1 2.1 0 0 1-3-3l4-4a4.2 4.2 0 0 1 6 0m2 5-3 3a3 3 0 0 1-4 0l-1-1m8-2 1-1a2.1 2.1 0 0 1 3 3l-4 4a4.2 4.2 0 0 1-6 0" />
                         </svg>
                     @endslot
-                @endcomponent
+                @endcomponent --}}
             </div>
         </div>
     </div>

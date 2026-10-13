@@ -25,10 +25,10 @@
         <div>
             <h2 class="text-sm font-bold text-white">Navegação</h2>
             <nav class="mt-4 flex flex-col items-start gap-2 text-xs text-[#d8cfca]" aria-label="Navegação do rodapé">
-                <a href="#inicio" class="transition hover:text-white">Início</a>
-                <a href="#adotar" class="transition hover:text-white">Quero Adotar</a>
-                <a href="#como-funciona" class="transition hover:text-white">Como Funciona</a>
-                <a href="#cadastrar" class="transition hover:text-white">Cadastrar Animal</a>
+                <a href="{{ route('home') }}#inicio" class="transition hover:text-white">Início</a>
+                <a href="{{ route('catalog') }}" class="transition hover:text-white">Quero Adotar</a>
+                <a href="{{ route('home') }}#como-funciona" class="transition hover:text-white">Como Funciona</a>
+                <a href="{{ route('filament.caregiver.auth.login') }}" class="transition hover:text-white">Cadastrar Animal</a>
                 <a href="#sobre" class="transition hover:text-white">Sobre o Projeto</a>
             </nav>
         </div>
