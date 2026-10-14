@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Models;
+
+use App\Enums\AgeGroup;
+use App\Enums\AnimalStatus;
+use App\Enums\Sex;
+use App\Enums\Size;
+use App\Enums\Species;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+#[Fillable('user_id', 'name', 'species', 'sex', 'age_group', 'size', 'city', 'description', 'status')]
+class Animal extends Model
+{
+    protected $casts = [
+        'species' => Species::class,
+        'sex' => Sex::class,
+        'age_group' => AgeGroup::class,
+        'size' => Size::class,
+        'status' => AnimalStatus::class,
+    ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+}
