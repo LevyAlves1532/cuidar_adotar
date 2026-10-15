@@ -95,12 +95,15 @@
             <div class="mt-6 space-y-3">
                 @component('components.button', [
                     'label' => 'Quero Adotar a Amora • Demonstrar Interesse',
-                    'url' => '#',
+                    'tag' => 'button',
+                    'type' => 'button',
                     'color' => 'terracotta',
                     'spacing' => 'none',
                     'customClass' => 'w-full py-3',
                 ])
+                    <span data-adoption-interest-open aria-hidden="true">
                     <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35 10.55 20C5.4 15.36 2 12.28 2 8.5A4.5 4.5 0 0 1 6.5 4a4.9 4.9 0 0 1 4.1 2.1L12 7l1.4-1.9A4.9 4.9 0 0 1 17.5 4 4.5 4.5 0 0 1 22 8.5c0 3.78-3.4 6.86-8.55 11.5L12 21.35Z"/></svg>
+                    </span>
                 @endcomponent
             </div>
 
@@ -118,5 +121,83 @@
                 </div>
             </div>
         </aside>
+    </div>
+
+    <div data-adoption-interest-modal class="fixed inset-0 z-50 hidden items-center justify-center bg-[#261714]/55 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="adoption-interest-title" aria-describedby="adoption-interest-description">
+        <div data-adoption-interest-panel class="adoption-interest-scrollbar max-h-[min(720px,calc(100vh-2rem))] w-full max-w-xl overflow-y-auto rounded-[1.75rem] border border-[#ead8d0] bg-[#fffaf7] shadow-[0_24px_80px_rgba(38,23,20,0.25)]">
+            <div class="border-b border-[#f0ddd5] bg-[#f9eee9] p-5 sm:p-6">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <p class="mb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-[#b63817]">Interesse por Amora</p>
+                        <h2 id="adoption-interest-title" class="font-serif text-2xl leading-tight tracking-[-0.03em] text-[#261714] sm:text-3xl">Dê o primeiro passo para acolher a Amora!</h2>
+                        <p id="adoption-interest-description" class="mt-2 max-w-lg text-sm leading-relaxed text-[#705a52]">Preencha o formulário e a ONG Patinhas da Vila receberá sua intenção de adoção.</p>
+                    </div>
+                    <button type="button" data-adoption-interest-close class="flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-full bg-white/70 text-[#705a52] transition hover:bg-white hover:text-[#b63817] focus:outline-none focus:ring-2 focus:ring-[#b63817]" aria-label="Fechar formulário">
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+                    </button>
+                </div>
+                <div class="mt-4 flex items-center gap-2 rounded-full bg-[#e5f2e3] px-3 py-2 text-[11px] font-medium text-[#356442]">
+                    <svg class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5.25 3.4 9.75 8 11 4.6-1.25 8-5.75 8-11V5l-8-3Zm-1 13-3-3 1.4-1.4L11 12.2l3.6-3.6L16 10l-5 5Z"/></svg>
+                    Seus dados ficam seguros e serão usados apenas para o contato da adoção.
+                </div>
+            </div>
+
+            <form data-adoption-interest-form class="space-y-5 p-5 sm:p-6">
+                <div class="flex items-center gap-2 text-sm font-bold text-[#261714]">
+                    <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#f7ddd5] text-xs text-[#b63817]">1</span>
+                    Seus dados de contato
+                </div>
+
+                @component('components.input', [
+                    'id' => 'adoption-interest-name',
+                    'name' => 'name',
+                    'label' => 'Nome completo',
+                    'placeholder' => 'Como podemos chamar você?',
+                    'required' => true,
+                ])
+                @endcomponent
+
+                <div class="grid gap-4 sm:grid-cols-2">
+                    @component('components.input', [
+                        'id' => 'adoption-interest-email',
+                        'name' => 'email',
+                        'type' => 'email',
+                        'label' => 'E-mail',
+                        'placeholder' => 'voce@exemplo.com',
+                        'required' => true,
+                    ])
+                    @endcomponent
+                    @component('components.input', [
+                        'id' => 'adoption-interest-whatsapp',
+                        'name' => 'whatsapp',
+                        'type' => 'tel',
+                        'label' => 'Número do WhatsApp',
+                        'placeholder' => '(11) 99999-9999',
+                        'required' => true,
+                    ])
+                    @endcomponent
+                </div>
+
+                <div>
+                    <label for="adoption-interest-motivation" class="mb-2 block text-xs font-semibold text-[#704f45]">Motivação para a adoção</label>
+                    <textarea id="adoption-interest-motivation" name="motivation" rows="4" required placeholder="Conte um pouco sobre por que você quer adotar a Amora..." class="w-full resize-y rounded-xl border border-[#f0ddd5] bg-[#fffaf7] px-4 py-3 text-sm text-[#3d2a24] outline-none transition placeholder:text-[#bda399] focus:border-[#b63817] focus:ring-4 focus:ring-[#b63817]/10"></textarea>
+                </div>
+
+                <div data-adoption-interest-feedback class="hidden rounded-xl bg-[#e5f2e3] p-3 text-sm font-medium text-[#356442]" role="status"></div>
+
+                <div class="flex flex-col-reverse gap-3 pt-1 sm:flex-row sm:justify-end">
+                    <button type="button" data-adoption-interest-close class="cursor-pointer rounded-full px-5 py-2.5 text-sm font-semibold text-[#704f45] transition hover:bg-[#f8ebe6] focus:outline-none focus:ring-2 focus:ring-[#b63817]">Cancelar</button>
+                    @component('components.button', [
+                        'label' => 'Enviar manifestação',
+                        'tag' => 'button',
+                        'type' => 'submit',
+                        'color' => 'terracotta',
+                        'spacing' => 'none',
+                        'customClass' => 'w-full sm:w-auto',
+                    ])
+                    @endcomponent
+                </div>
+            </form>
+        </div>
     </div>
 </section>

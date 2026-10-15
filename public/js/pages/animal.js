@@ -1,5 +1,60 @@
 (function () {
 	const gallery = document.querySelector('[data-animal-gallery]');
+	const interestModal = document.querySelector('[data-adoption-interest-modal]');
+
+	if (interestModal) {
+		const interestForm = interestModal.querySelector('[data-adoption-interest-form]');
+		const openButtons = document.querySelectorAll('[data-adoption-interest-open]');
+		const closeButtons = interestModal.querySelectorAll('[data-adoption-interest-close]');
+		const panel = interestModal.querySelector('[data-adoption-interest-panel]');
+		const feedback = interestModal.querySelector('[data-adoption-interest-feedback]');
+		let lastFocusedElement = null;
+
+		const closeModal = () => {
+			interestModal.classList.add('hidden');
+			interestModal.classList.remove('flex');
+			document.body.classList.remove('overflow-hidden');
+			lastFocusedElement?.focus();
+		};
+
+		const openModal = () => {
+			lastFocusedElement = document.activeElement;
+			interestModal.classList.remove('hidden');
+			interestModal.classList.add('flex');
+			document.body.classList.add('overflow-hidden');
+			feedback.classList.add('hidden');
+			panel.querySelector('input')?.focus();
+		};
+
+		openButtons.forEach((button) => {
+			button.closest('button')?.addEventListener('click', openModal);
+		});
+
+		closeButtons.forEach((button) => button.addEventListener('click', closeModal));
+
+		interestModal.addEventListener('click', (event) => {
+			if (event.target === interestModal) {
+				closeModal();
+			}
+		});
+
+		document.addEventListener('keydown', (event) => {
+			if (interestModal.classList.contains('hidden')) {
+				return;
+			}
+
+			if (event.key === 'Escape') {
+				closeModal();
+			}
+		});
+
+		interestForm.addEventListener('submit', (event) => {
+			event.preventDefault();
+			feedback.textContent = 'Obrigado! A ONG Patinhas da Vila recebeu seu interesse e entrará em contato em breve.';
+			feedback.classList.remove('hidden');
+			interestForm.reset();
+		});
+	}
 
 	if (!gallery) {
 		return;
