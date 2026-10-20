@@ -25,25 +25,12 @@
             <div data-carousel-viewport role="group" aria-label="Histórias de famílias que adotaram" tabindex="0" class="overflow-x-auto snap-x snap-mandatory focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b63817] focus-visible:ring-offset-4">
                 <div class="flex gap-4" data-carousel-track>
                     @component('components.testimonial-card', [
-                        'image' => 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=85',
-                        'imageAlt' => 'Cachorro Estrela adotado pela família',
-                        'quote' => 'Adotar a Estrela transformou a rotina da nossa casa. A plataforma nos ajudou a entender o perfil dela com clareza antes do encontro. Ela é o coração da família hoje.',
-                        'name' => 'Carolina & Felipe',
-                        'caption' => 'Tutores da Estrela • Há 8 meses',
-                        'initials' => 'CF',
-                        'avatarColor' => 'bg-[#d9f0d2] text-[#356442]',
-                        'slide' => '1',
-                        'totalSlides' => '3',
-                    ])
-                    @endcomponent
-
-                    @component('components.testimonial-card', [
-                        'image' => 'https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=85',
-                        'imageAlt' => 'Gato Frederico adotado',
-                        'quote' => 'Eu nunca tinha tido gatos. O questionário e as orientações da ONG parceira me deram total segurança para preparar a casa e as telas. O Frederico é meu companheiro diário.',
-                        'name' => 'Mariana Ramos',
-                        'caption' => 'Tutora do Frederico • Há 1 ano',
-                        'initials' => 'MR',
+                        'image' => asset('images/testimonial2.png'),
+                        'imageAlt' => 'De um abandono a uma família cheia de carinho',
+                        'quote' => 'Em Joinville (SC), uma filhote foi abandonada na calçada e correu atrás da mulher que a deixou para trás. A cena foi registrada por uma câmera de segurança e repercutiu nas redes sociais. Mas a história teve um desfecho feliz: Mel foi adotada naquele mesmo dia e passou a viver com uma família que já tinha outras duas cadelas.',
+                        'name' => 'O sogro de Abigaiu Gabriela Oenning',
+                        'caption' => 'Tutor da Mel • Há 1 ano e 2 meses',
+                        'initials' => 'SG',
                         'avatarColor' => 'bg-[#ffd9d6] text-[#b63817]',
                         'slide' => '2',
                         'totalSlides' => '3',
@@ -51,12 +38,25 @@
                     @endcomponent
 
                     @component('components.testimonial-card', [
-                        'image' => 'https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=85',
-                        'imageAlt' => 'Cachorro Barão adotado',
-                        'quote' => 'Escolhemos adotar um cão adulto e foi a melhor decisão. O Barão já chegou educado, mansinho com o meu filho e trouxe uma serenidade inacreditável ao nosso lar.',
-                        'name' => 'Rodrigo de Alencar',
-                        'caption' => 'Tutor do Barão • Há 2 anos',
-                        'initials' => 'RA',
+                        'image' => asset('images/testimonial1.png'),
+                        'imageAlt' => 'Um novo lar depois de uma despedida difícil',
+                        'quote' => 'Após perder seu antigo tutor, Scooby foi acolhido pela ONG Viva Bicho, em Balneário Camboriú (SC). A história comoveu muitas pessoas, e o casal Lauriani e Allan decidiu oferecer a ele um novo lar. A família já tinha outros dois cães e preparou espaço para receber Scooby com carinho.',
+                        'name' => 'Lauriani Garghetti e Allan Tatsch',
+                        'caption' => 'Tutores do Scooby • Há 1 ano e 8 meses',
+                        'initials' => 'LA',
+                        'avatarColor' => 'bg-[#d9f0d2] text-[#356442]',
+                        'slide' => '1',
+                        'totalSlides' => '3',
+                    ])
+                    @endcomponent
+
+                    @component('components.testimonial-card', [
+                        'image' => asset('images/testimonial3.png'),
+                        'imageAlt' => 'A adoção que virou uma amizade para a vida',
+                        'quote' => 'Bianca encontrou Fred por acaso, ao ver uma publicação oferecendo filhotes para adoção nas redes sociais. Ela se encantou imediatamente e foi buscá-lo no dia seguinte. Desde então, os dois se tornaram inseparáveis. Fred acompanhou Bianca em mudanças importantes da vida, inclusive quando ela começou a morar sozinha, tornando-se seu companheiro e fonte de alegria.',
+                        'name' => 'Bianca Mota',
+                        'caption' => 'Tutora do Fred • Há 3 anos e 2 meses',
+                        'initials' => 'FR',
                         'avatarColor' => 'bg-[#ffe5c5] text-[#a96521]',
                         'slide' => '3',
                         'totalSlides' => '3',

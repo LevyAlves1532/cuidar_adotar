@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 #[Fillable('user_id', 'name', 'species', 'sex', 'age_group', 'size', 'city', 'description', 'status')]
 class Animal extends Model
@@ -31,5 +32,11 @@ class Animal extends Model
     public function images(): HasMany
     {
         return $this->hasMany(AnimalImage::class, 'animal_id');
+    }
+
+    public function primaryImage(): HasOne
+    {
+        return $this->hasOne(AnimalImage::class, 'animal_id')
+            ->where('is_primary', true);
     }
 }

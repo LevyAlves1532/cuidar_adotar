@@ -14,7 +14,17 @@
 
 <article class="flex min-w-0 flex-col rounded-2xl border border-white bg-white p-2.5 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(104,56,38,0.12)] sm:p-3">
     <div class="relative aspect-[1.08/1] overflow-hidden rounded-xl bg-[#f4e4dc]">
-        <img src="{{ $image }}" alt="{{ $name }} aguardando adoção" class="h-full w-full object-cover object-center" loading="lazy" />
+        @if (filled($image))
+            <img src="{{ $image }}" alt="{{ $name }} aguardando adoção" class="h-full w-full object-cover object-center" loading="lazy" />
+        @else
+            <div class="flex h-full w-full flex-col items-center justify-center gap-2 px-4 text-center text-[#8c6b60]" role="img" aria-label="Imagem de {{ $name }} ainda não cadastrada">
+                <svg class="h-10 w-10 opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 3.75-3.75 3 3 4.5-5.25 8.25 8.25M3.75 19.5h16.5A1.75 1.75 0 0 0 22 17.75v-11A1.75 1.75 0 0 0 20.25 5H3.75A1.75 1.75 0 0 0 2 6.75v11a1.75 1.75 0 0 0 1.75 1.75Z" />
+                    <circle cx="8.25" cy="9" r="1.25" />
+                </svg>
+                <span class="text-xs font-medium">Imagem ainda não cadastrada</span>
+            </div>
+        @endif
         <div class="absolute left-2 top-2 max-w-[calc(100%-3rem)]">
             @component('components.tag', [
                 'label' => $status,

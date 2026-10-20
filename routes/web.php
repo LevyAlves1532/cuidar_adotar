@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', fn () => view('pages.home'))
+Route::get('/', [PagesController::class, 'home'])
     ->name('home');
 
 Route::get('/catalogo', fn () => view('pages.catalog'))
