@@ -5,13 +5,28 @@
 		);
 
 		scrollContainers.forEach((container) => {
+			if (container.dataset.catalogScrollInitialized === 'true') {
+				return;
+			}
+
+			container.dataset.catalogScrollInitialized = 'true';
+
 			let isDragging = false;
 			let hasDragged = false;
 			let startX = 0;
 			let startScrollLeft = 0;
 
 			container.addEventListener('pointerdown', (event) => {
-				if (event.pointerType === 'touch' || event.button !== 0) {
+				const interactiveElement = event.target.closest(
+					'button, a, input, select, textarea, label',
+				);
+
+				if (
+					event.pointerType === 'touch' ||
+					event.button !== 0 ||
+					interactiveElement ||
+					container.scrollWidth <= container.clientWidth
+				) {
 					return;
 				}
 
@@ -30,7 +45,7 @@
 
 				const distance = event.clientX - startX;
 
-				if (Math.abs(distance) > 5) {
+				if (Math.abs(distance) > 8) {
 					hasDragged = true;
 				}
 

@@ -8,6 +8,7 @@ use App\Enums\Sex;
 use App\Enums\Size;
 use App\Enums\Species;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -16,6 +17,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 #[Fillable('user_id', 'name', 'species', 'sex', 'age_group', 'size', 'city', 'description', 'status')]
 class Animal extends Model
 {
+    use HasFactory;
+
     protected $casts = [
         'species' => Species::class,
         'sex' => Sex::class,
