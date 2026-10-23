@@ -18,6 +18,8 @@ new class extends Component
 
     public function mount(): void
     {
+        $this->selectedSpecies = request()->query('species');
+
         $availableAnimals = Animal::query()->where('status', AnimalStatus::AVAILABLE);
 
         $this->totalAvailableAnimals = (clone $availableAnimals)->count();

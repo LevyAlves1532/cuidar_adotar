@@ -8,7 +8,7 @@
             <p class="max-w-sm text-sm leading-6 text-[#8c6b60] sm:text-right">Use os filtros para encontrar animais disponíveis para adoção perto de você.</p>
         </div>
 
-        <form action="#catalogo" method="GET" class="grid gap-4 lg:grid-cols-12 lg:items-end" aria-label="Filtrar animais para adoção">
+        <form action="{{ route('catalog') }}" method="GET" class="grid gap-4 lg:grid-cols-12 lg:items-end" aria-label="Filtrar animais para adoção">
             @component('components.input', [
                 'id' => 'animal-search',
                 'customClass' => 'lg:col-span-12',
@@ -31,9 +31,9 @@
                 'id' => 'animal-species',
                 'name' => 'species',
                 'options' => [
-                    '' => 'Cães e gatos',
-                    'dog' => 'Cães',
-                    'cat' => 'Gatos',
+                    '' => 'Todas',
+                    \App\Enums\Species::DOG->value => 'Cães',
+                    \App\Enums\Species::CAT->value => 'Gatos',
                 ],
             ])
             @endcomponent
@@ -45,9 +45,9 @@
                 'name' => 'size',
                 'options' => [
                     '' => 'Qualquer porte',
-                    'small' => 'Pequeno',
-                    'medium' => 'Médio',
-                    'large' => 'Grande',
+                    \App\Enums\Size::SMALL->value => 'Pequeno',
+                    \App\Enums\Size::MEDIUM->value => 'Médio',
+                    \App\Enums\Size::BIG->value => 'Grande',
                 ],
             ])
             @endcomponent
@@ -59,28 +59,26 @@
                 'name' => 'age',
                 'options' => [
                     '' => 'Qualquer idade',
-                    'puppy' => 'Filhote',
-                    'adult' => 'Adulto',
-                    'senior' => 'Idoso',
+                    \App\Enums\AgeGroup::CUB->value => 'Filhote',
+                    \App\Enums\AgeGroup::YOUNG->value => 'Jovem',
+                    \App\Enums\AgeGroup::ADULT->value => 'Adulto',
+                    \App\Enums\AgeGroup::ELDERLY->value => 'Idoso',
                 ],
             ])
             @endcomponent
 
-            @component('components.input', [
+            @component('components.select', [
                 'id' => 'animal-location',
                 'customClass' => 'lg:col-span-3',
                 'label' => 'Localização',
-                'name' => 'location',
-                'type' => 'text',
-                'placeholder' => 'Cidade ou estado',
+                'name' => 'city',
+                'options' => collect(['' => 'Todas as cidades'])->union(
+                    collect($availableCities)->mapWithKeys(fn (string $city): array => [$city => $city])
+                )->all(),
             ])
             @endcomponent
 
             <div class="flex flex-col gap-3 border-t border-[#f4e8e1] pt-4 sm:flex-row sm:items-center sm:justify-between lg:col-span-12">
-                <label class="flex items-center gap-2 text-xs text-[#8c6b60]">
-                    <input type="checkbox" name="verified" value="1" class="h-4 w-4 rounded border-[#dcbfb3] text-[#b63817] accent-[#b63817] focus:ring-[#b63817]/20" />
-                    Apenas animais verificados e com acompanhamento inicial garantido
-                </label>
                 @component('components.button', [
                     'tag' => 'button',
                     'type' => 'submit',

@@ -3,8 +3,8 @@
 @section('body')
 	<div class="overflow-hidden bg-linear-to-br from-[#fffaf2] via-[#fff4ef] to-[#ffebe5]">
 		@include('containers.home.banner')
-		@include('containers.home.animal-filter')
-		@include('containers.home.categories')
+		@include('containers.home.animal-filter', ['availableCities' => $availableCities])
+		@include('containers.home.categories', ['categoryCounts' => $categoryCounts])
 		@include('containers.home.animals')
 	</div>
 

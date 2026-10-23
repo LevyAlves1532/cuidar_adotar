@@ -10,6 +10,8 @@ use Livewire\Component;
 
 new class extends Component
 {
+    public string $search = '';
+
     public string $species = '';
 
     public string $sex = '';
@@ -26,6 +28,14 @@ new class extends Component
 
     public function mount(): void
     {
+        $this->search = (string) request()->query('q', '');
+        $this->species = (string) request()->query('species', '');
+        $this->size = (string) request()->query('size', '');
+        $this->city = (string) request()->query('city', '');
+
+        $age = request()->query('age');
+        $this->ageGroups = $age ? [(string) $age] : [];
+
         $this->cities = Animal::query()
             ->whereNotNull('city')
             ->where('city', '!=', '')
@@ -39,6 +49,7 @@ new class extends Component
     public function applyFilters(): void
     {
         $this->dispatch('catalog-filters-changed', filters: [
+            'search' => $this->search ?: null,
             'species' => $this->species ?: null,
             'sex' => $this->sex ?: null,
             'age_groups' => $this->ageGroups,
@@ -50,6 +61,7 @@ new class extends Component
     #[On('catalog-filters-changed')]
     public function syncFilters(array $filters): void
     {
+        $this->search = $filters['search'] ?? '';
         $this->species = $filters['species'] ?? '';
         $this->sex = $filters['sex'] ?? '';
         $this->ageGroups = $filters['age_groups'] ?? [];
@@ -78,7 +90,7 @@ new class extends Component
 
     <form id="catalog-filter-form" wire:submit="applyFilters" class="mt-4 space-y-4">
         <div>
-            @component('components.input', ['id' => 'catalog-search', 'name' => 'search', 'type' => 'search', 'label' => 'Busca Rápida', 'placeholder' => 'Nome', 'customClass' => 'catalog-sidebar-input', 'compact' => true, 'iconPosition' => 'right'])
+                @component('components.input', ['id' => 'catalog-search', 'name' => 'search', 'type' => 'search', 'label' => 'Busca Rápida', 'placeholder' => 'Nome', 'customClass' => 'catalog-sidebar-input', 'compact' => true, 'iconPosition' => 'right', 'value' => $search, 'wireModel' => 'search'])
                 @slot('iconLeft')
                     <svg class="pointer-events-none absolute right-3 top-2.5 h-3.5 w-3.5 text-[#8c6b60]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path stroke-linecap="round" d="m20 20-4-4" /></svg>
                 @endslot

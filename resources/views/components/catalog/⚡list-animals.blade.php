@@ -12,6 +12,8 @@ use Livewire\Component;
 
 new class extends Component
 {
+    public ?string $selectedSearch = null;
+
     public array $animals = [];
 
     public int $totalAvailableAnimals = 0;
@@ -33,6 +35,14 @@ new class extends Component
 
     public function mount(): void
     {
+        $this->selectedSearch = request()->query('q') ?: request()->query('search');
+        $this->selectedSpecies = request()->query('species');
+        $this->selectedSize = request()->query('size');
+        $this->selectedCity = request()->query('city');
+
+        $age = request()->query('age');
+        $this->selectedAgeGroups = $age ? [(string) $age] : [];
+
         $this->loadAnimals();
     }
 
@@ -53,6 +63,7 @@ new class extends Component
     #[On('catalog-filters-changed')]
     public function applyFilters(array $filters): void
     {
+        $this->selectedSearch = $filters['search'] ?? null;
         $this->selectedSpecies = $filters['species'] ?? null;
         $this->selectedSex = $filters['sex'] ?? null;
         $this->selectedAgeGroups = $filters['age_groups'] ?? [];
@@ -84,6 +95,16 @@ new class extends Component
 
         if ($this->selectedSpecies !== null) {
             $query->where('species', Species::from($this->selectedSpecies));
+        }
+
+        if ($this->selectedSearch !== null && $this->selectedSearch !== '') {
+            $search = trim($this->selectedSearch);
+
+            $query->where(function ($query) use ($search): void {
+                $query->where('name', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%")
+                    ->orWhere('city', 'like', "%{$search}%");
+            });
         }
 
         if ($this->selectedSex !== null) {

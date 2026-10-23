@@ -58,6 +58,13 @@ it('counts available animals in the quick filters', function (): void {
         ->assertSet('availableCats', 2);
 });
 
+it('marks the species quick filter from the catalog query as active', function (): void {
+    Livewire::withQueryParams(['species' => Species::DOG->value])
+        ->test('catalog.quick-filters')
+        ->assertSet('selectedSpecies', Species::DOG->value)
+        ->assertSee('Cães');
+});
+
 it('applies all sidebar filters and resets them', function (): void {
     Animal::factory()->create([
         'name' => 'Filtered pet',

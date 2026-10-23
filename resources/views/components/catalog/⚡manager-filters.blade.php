@@ -28,6 +28,13 @@ new class extends Component
 
     public function mount(): void
     {
+        $this->species = request()->query('species');
+        $this->size = request()->query('size');
+        $this->city = request()->query('city');
+
+        $age = request()->query('age');
+        $this->ageGroups = $age ? [(string) $age] : [];
+
         $this->totalAvailableAnimals = Animal::query()
             ->where('status', AnimalStatus::AVAILABLE)
             ->count();

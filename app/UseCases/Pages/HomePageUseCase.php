@@ -13,6 +13,8 @@ class HomePageUseCase
         return [
             'animals' => $this->animalRepository->getRecentAvailable(),
             'availableAnimalsCount' => $this->animalRepository->countAvailable(),
+            'categoryCounts' => $this->animalRepository->countAvailableByCategories(),
+            'availableCities' => $this->animalRepository->getAvailableCities(),
         ];
     }
 }

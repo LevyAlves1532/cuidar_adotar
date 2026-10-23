@@ -10,7 +10,8 @@
     <div class="mt-5 grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-5">
         @component('components.category-card', [
             'label' => 'Cachorros',
-            'available' => '+142',
+            'available' => $categoryCounts['dogs'],
+            'url' => route('catalog', ['species' => \App\Enums\Species::DOG->value]),
             'iconBackground' => 'bg-[#fde9e3]',
             'iconColor' => 'text-[#b63817]',
         ])
@@ -23,7 +24,8 @@
 
         @component('components.category-card', [
             'label' => 'Gatinhos',
-            'available' => '+98',
+            'available' => $categoryCounts['cats'],
+            'url' => route('catalog', ['species' => \App\Enums\Species::CAT->value]),
             'iconBackground' => 'bg-[#d9f0d2]',
             'iconColor' => 'text-[#356442]',
         ])
@@ -37,7 +39,8 @@
 
         @component('components.category-card', [
             'label' => 'Filhotes',
-            'available' => '+45',
+            'available' => $categoryCounts['puppies'],
+            'url' => route('catalog', ['age' => \App\Enums\AgeGroup::CUB->value]),
             'iconBackground' => 'bg-[#ffe5c5]',
             'iconColor' => 'text-[#a96521]',
         ])
@@ -51,7 +54,8 @@
 
         @component('components.category-card', [
             'label' => 'Sêniores',
-            'available' => '+30',
+            'available' => $categoryCounts['seniors'],
+            'url' => route('catalog', ['age' => \App\Enums\AgeGroup::ELDERLY->value]),
             'iconBackground' => 'bg-[#eee9e5]',
             'iconColor' => 'text-[#40342f]',
         ])
@@ -65,7 +69,8 @@
 
         @component('components.category-card', [
             'label' => 'Cachorros Grandões',
-            'available' => '+15',
+            'available' => $categoryCounts['bigDogs'],
+            'url' => route('catalog', ['species' => \App\Enums\Species::DOG->value, 'size' => \App\Enums\Size::BIG->value]),
             'iconBackground' => 'bg-[#ffd9d6]',
             'iconColor' => 'text-[#d04d45]',
         ])
