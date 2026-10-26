@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Animal;
 use Illuminate\Support\Collection;
 
 interface IAnimalRepository
@@ -19,4 +20,6 @@ interface IAnimalRepository
      * @return array<int, string>
      */
     public function getAvailableCities(): array;
+
+    public function findAvailableById(int|string $animalId): Animal;
 }

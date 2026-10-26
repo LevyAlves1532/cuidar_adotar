@@ -10,8 +10,8 @@ Route::get('/', function () {
 Route::get('/', [PagesController::class, 'home'])
     ->name('home');
 
-Route::get('/catalogo', fn () => view('pages.catalog'))
+Route::get('/catalogo', [PagesController::class, 'catalog'])
     ->name('catalog');
 
-Route::get('/animal/{id}', fn () => view('pages.animal'))
+Route::get('/animal/{animalId}', [PagesController::class, 'animal'])
     ->name('animal');

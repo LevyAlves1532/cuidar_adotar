@@ -132,7 +132,7 @@ new class extends Component
             ->limit($this->visibleAnimals)
             ->get()
             ->map(fn (Animal $animal): array => [
-                'url' => route('animal', ['id' => $animal->id]),
+                'url' => route('animal', ['animalId' => $animal->id]),
                 'name' => $animal->name,
                 'age' => $animal->age_group->label(),
                 'size' => 'Porte '.$animal->size->label(),

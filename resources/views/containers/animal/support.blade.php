@@ -5,7 +5,7 @@
         </span>
 
         <h2 id="animal-support-title" class="mt-3 max-w-lg font-serif text-xl font-bold leading-tight text-[#261714] sm:text-2xl">
-            Não pode adotar agora? Você ainda pode transformar o destino da Amora.
+            Não pode adotar agora? Você ainda pode transformar o destino de {{ $animal->name }}.
         </h2>
         <p class="mt-2 max-w-xl text-[11px] leading-5 text-[#704f45] sm:text-xs">
             Compartilhe o perfil dela nas suas redes sociais ou apadrinhe os custos mensais de vacinas e ração enquanto ela aguarda a família definitiva.
@@ -22,7 +22,7 @@
                 <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="2" /><circle cx="6" cy="12" r="2" /><circle cx="18" cy="19" r="2" /><path stroke-linecap="round" stroke-linejoin="round" d="m8 11 8-5m-8 7 8 5" /></svg>
             @endcomponent
             @component('components.button', [
-                'label' => 'Apadrinhar Cuidados da Amora',
+                'label' => 'Apadrinhar Cuidados de '.$animal->name,
                 'url' => '#',
                 'color' => 'white-red',
                 'spacing' => 'none',

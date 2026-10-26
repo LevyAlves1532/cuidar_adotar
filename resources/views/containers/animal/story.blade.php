@@ -1,6 +1,6 @@
 <section class="mx-auto w-full max-w-7xl px-5 pb-8 sm:px-8 lg:px-10 lg:pb-12">
     <div class="grid gap-6 lg:grid-cols-[1.7fr_1fr] lg:items-stretch xl:gap-8">
-        <article id="historia-amora" class="flex h-full flex-col rounded-[1.5rem] border border-[#ead8d0] bg-white p-5 shadow-[0_14px_30px_rgba(123,87,69,0.06)] sm:p-6">
+        <article id="historia-animal" class="flex h-full flex-col rounded-[1.5rem] border border-[#ead8d0] bg-white p-5 shadow-[0_14px_30px_rgba(123,87,69,0.06)] sm:p-6">
             <div class="flex items-start gap-3">
                 <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fff0e8] text-[#b63817]">
                     <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -8,14 +8,14 @@
                     </svg>
                 </div>
                 <div>
-                    <h2 class="font-serif text-xl font-bold leading-tight text-[#261714] sm:text-2xl">História de Superação da Amora</h2>
-                    <p class="mt-2 text-[11px] leading-5 text-[#704f45] sm:text-xs">Em uma noite chuvosa de novembro, Amora foi resgatada de uma situação de abandono na Zona Sul de São Paulo.</p>
+                    <h2 class="font-serif text-xl font-bold leading-tight text-[#261714] sm:text-2xl">História de {{ $animal->name }}</h2>
+                    <p class="mt-2 text-[11px] leading-5 text-[#704f45] sm:text-xs">Conheça a história de {{ $animal->name }} e os cuidados recebidos até estar disponível para adoção.</p>
                 </div>
             </div>
 
             <div class="mt-4 space-y-3 text-[11px] leading-5 text-[#704f45] sm:text-xs">
-                <p>Assustada e com fome, ela encontrou acolhimento emergencial da equipe da ONG Patinhas da Vila. Desde então, recebeu cuidados veterinários, alimentação e muito carinho.</p>
-                <p>Hoje, Amora está saudável, brincalhona e pronta para começar uma nova história em um lar responsável, seguro e cheio de afeto.</p>
+                <p>{{ $animal->description }}</p>
+                <p>{{ $animal->name }} está aguardando um lar responsável, seguro e cheio de afeto.</p>
             </div>
         </article>
 
@@ -26,7 +26,7 @@
                 </div>
                 <div>
                     <h2 class="font-serif text-xl font-bold leading-tight text-[#261714] sm:text-2xl">Requisitos de Tutela</h2>
-                    <p class="mt-2 text-[11px] leading-5 text-[#704f45] sm:text-xs">Para garantir o bem-estar da Amora, buscamos um adotante ou família que cumpra estes critérios simples.</p>
+                    <p class="mt-2 text-[11px] leading-5 text-[#704f45] sm:text-xs">Para garantir o bem-estar de {{ $animal->name }}, buscamos um adotante ou família que cumpra estes critérios simples.</p>
                 </div>
             </div>
 

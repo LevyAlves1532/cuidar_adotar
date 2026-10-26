@@ -1,22 +1,10 @@
 @php
-    $gallery = [
-        'https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=1400&q=85',
-        'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=85',
-        'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=85',
-        'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=900&q=85',
-    ];
+    $gallery = $animal->images;
 
     $facts = [
-        ['label' => '1 ano e 2 meses', 'icon' => 'calendar'],
-        ['label' => 'Porte Pequeno/Médio (8,2 kg)', 'icon' => 'weight'],
-        ['label' => 'São Paulo, SP (Vila Mariana)', 'icon' => 'location'],
-    ];
-
-    $traits = [
-        ['label' => 'Apta p/ Apartamento', 'icon' => 'home'],
-        ['label' => 'Amigável c/ Gatos', 'icon' => 'cat'],
-        ['label' => 'Adora Crianças', 'icon' => 'child'],
-        ['label' => 'Energia: Moderada', 'icon' => 'bolt'],
+        ['label' => $animal->age_group->label(), 'icon' => 'calendar'],
+        ['label' => 'Porte '.$animal->size->label(), 'icon' => 'weight'],
+        ['label' => $animal->city, 'icon' => 'location'],
     ];
 @endphp
 
@@ -26,7 +14,7 @@
             <div class="mb-3 flex flex-wrap items-center justify-between gap-3">
                 <div class="flex flex-wrap items-center gap-2">
                     @component('components.tag', [
-                        'label' => 'Disponível para Adoção',
+                        'label' => $animal->status->label(),
                         'color' => 'white-green',
                         'customSize' => '11px',
                     ])
@@ -40,20 +28,22 @@
                 </div>
             </div>
 
-            <div data-animal-gallery-viewport class="overflow-x-auto rounded-[1.5rem] bg-[#e8d5cd]" tabindex="0" aria-label="Galeria de fotos da Amora">
+            <div data-animal-gallery-viewport class="overflow-x-auto rounded-[1.5rem] bg-[#e8d5cd]" tabindex="0" aria-label="Galeria de fotos de {{ $animal->name }}">
                 <div data-animal-gallery-container class="flex touch-pan-y">
-                    @foreach ($gallery as $index => $image)
+                    @forelse ($gallery as $index => $image)
                         <div class="min-w-0 flex-[0_0_100%]">
-                            <img src="{{ $image }}" alt="Amora aguardando adoção, foto {{ $index + 1 }}" class="h-[420px] w-full object-cover object-center sm:h-[500px]" loading="{{ $index === 0 ? 'eager' : 'lazy' }}" />
+                            <img src="{{ filter_var($image->path, FILTER_VALIDATE_URL) ? $image->path : asset('storage/'.$image->path) }}" alt="{{ $animal->name }} aguardando adoção, foto {{ $index + 1 }}" class="h-[420px] w-full object-cover object-center sm:h-[500px]" loading="{{ $index === 0 ? 'eager' : 'lazy' }}" />
                         </div>
-                    @endforeach
+                    @empty
+                        <div class="flex min-h-[420px] w-full items-center justify-center text-sm text-[#704f45] sm:min-h-[500px]">Este animal ainda não possui fotos.</div>
+                    @endforelse
                 </div>
             </div>
 
             <div data-animal-gallery-thumbnails class="mt-4 grid grid-cols-4 gap-2 sm:gap-3">
                 @foreach ($gallery as $index => $image)
                     <button type="button" data-animal-gallery-thumbnail="{{ $index }}" class="group overflow-hidden rounded-xl border {{ $index === 0 ? 'border-[#b63817] ring-2 ring-[#f3cabd]' : 'border-[#ebddd7] hover:border-[#b63817]' }} bg-[#f7f1ef] focus:outline-none focus:ring-2 focus:ring-[#b63817]" aria-label="Ver foto {{ $index + 1 }} de {{ count($gallery) }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}">
-                        <img src="{{ $image }}" alt="Amora foto {{ $index + 1 }}" class="h-20 w-full object-cover transition duration-200 group-hover:scale-105 sm:h-24" loading="lazy" />
+                        <img src="{{ filter_var($image->path, FILTER_VALIDATE_URL) ? $image->path : asset('storage/'.$image->path) }}" alt="{{ $animal->name }} foto {{ $index + 1 }}" class="h-20 w-full object-cover transition duration-200 group-hover:scale-105 sm:h-24" loading="lazy" />
                     </button>
                 @endforeach
             </div>
@@ -62,14 +52,14 @@
         <aside id="adotar" class="rounded-[2rem] border border-[#ead8d0] bg-[#f9f4f1] p-4 shadow-[0_18px_36px_rgba(123,87,69,0.06)] sm:p-5 lg:p-6">
             <div class="mb-4 flex items-center justify-between gap-3">
                 @component('components.tag', [
-                    'label' => 'Fêmea',
+                    'label' => $animal->sex->label(),
                     'color' => 'white-green',
                     'customSize' => '11px',
                 ])
                 @endcomponent
             </div>
 
-            <h1 class="font-serif text-[2.4rem] leading-none tracking-[-0.04em] text-[#261714] sm:text-[3rem]">Amora</h1>
+            <h1 class="font-serif text-[2.4rem] leading-none tracking-[-0.04em] text-[#261714] sm:text-[3rem]">{{ $animal->name }}</h1>
 
             <div class="mt-5 space-y-3 text-[15px] text-[#4a3a35]">
                 @foreach ($facts as $fact)
@@ -94,7 +84,7 @@
 
             <div class="mt-6 space-y-3">
                 @component('components.button', [
-                    'label' => 'Quero Adotar a Amora • Demonstrar Interesse',
+                    'label' => 'Quero Adotar '.$animal->name.' • Demonstrar Interesse',
                     'tag' => 'button',
                     'type' => 'button',
                     'color' => 'terracotta',
@@ -115,8 +105,8 @@
                         <svg class="h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M448 96L439.4 96C428.4 76.9 407.7 64 384 64L256 64C232.3 64 211.6 76.9 200.6 96L192 96C156.7 96 128 124.7 128 160L128 512C128 547.3 156.7 576 192 576L448 576C483.3 576 512 547.3 512 512L512 160C512 124.7 483.3 96 448 96zM264 176C250.7 176 240 165.3 240 152C240 138.7 250.7 128 264 128L376 128C389.3 128 400 138.7 400 152C400 165.3 389.3 176 376 176L264 176z"/></svg>
                     </div>
                     <div>
-                        <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-[#6e7c6d]">ONG Patinhas da Vila</p>
-                        <p class="mt-1 text-sm font-semibold text-[#2b362d]">Membro desde 2021 • 140+ ações realizadas</p>
+                        <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-[#6e7c6d]">{{ $animal->user->responsible_type?->label() ?? 'Responsável pelo animal' }}</p>
+                        <p class="mt-1 text-sm font-semibold text-[#2b362d]">{{ $animal->user->name }}</p>
                     </div>
                 </div>
             </div>
@@ -128,9 +118,9 @@
             <div class="border-b border-[#f0ddd5] bg-[#f9eee9] p-5 sm:p-6">
                 <div class="flex items-start justify-between gap-4">
                     <div>
-                        <p class="mb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-[#b63817]">Interesse por Amora</p>
-                        <h2 id="adoption-interest-title" class="font-serif text-2xl leading-tight tracking-[-0.03em] text-[#261714] sm:text-3xl">Dê o primeiro passo para acolher a Amora!</h2>
-                        <p id="adoption-interest-description" class="mt-2 max-w-lg text-sm leading-relaxed text-[#705a52]">Preencha o formulário e a ONG Patinhas da Vila receberá sua intenção de adoção.</p>
+                        <p class="mb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-[#b63817]">Interesse por {{ $animal->name }}</p>
+                        <h2 id="adoption-interest-title" class="font-serif text-2xl leading-tight tracking-[-0.03em] text-[#261714] sm:text-3xl">Dê o primeiro passo para acolher {{ $animal->name }}!</h2>
+                        <p id="adoption-interest-description" class="mt-2 max-w-lg text-sm leading-relaxed text-[#705a52]">Preencha o formulário e o responsável receberá sua intenção de adoção.</p>
                     </div>
                     <button type="button" data-adoption-interest-close class="flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-full bg-white/70 text-[#705a52] transition hover:bg-white hover:text-[#b63817] focus:outline-none focus:ring-2 focus:ring-[#b63817]" aria-label="Fechar formulário">
                         <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
@@ -180,7 +170,7 @@
 
                 <div>
                     <label for="adoption-interest-motivation" class="mb-2 block text-xs font-semibold text-[#704f45]">Motivação para a adoção</label>
-                    <textarea id="adoption-interest-motivation" name="motivation" rows="4" required placeholder="Conte um pouco sobre por que você quer adotar a Amora..." class="w-full resize-y rounded-xl border border-[#f0ddd5] bg-[#fffaf7] px-4 py-3 text-sm text-[#3d2a24] outline-none transition placeholder:text-[#bda399] focus:border-[#b63817] focus:ring-4 focus:ring-[#b63817]/10"></textarea>
+                    <textarea id="adoption-interest-motivation" name="motivation" rows="4" required placeholder="Conte um pouco sobre por que você quer adotar {{ $animal->name }}..." class="w-full resize-y rounded-xl border border-[#f0ddd5] bg-[#fffaf7] px-4 py-3 text-sm text-[#3d2a24] outline-none transition placeholder:text-[#bda399] focus:border-[#b63817] focus:ring-4 focus:ring-[#b63817]/10"></textarea>
                 </div>
 
                 <div data-adoption-interest-feedback class="hidden rounded-xl bg-[#e5f2e3] p-3 text-sm font-medium text-[#356442]" role="status"></div>

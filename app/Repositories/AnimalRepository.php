@@ -57,4 +57,13 @@ class AnimalRepository implements IAnimalRepository
             ->values()
             ->all();
     }
+
+    public function findAvailableById(int|string $animalId): Animal
+    {
+        return Animal::query()
+            ->whereKey($animalId)
+            ->where('status', AnimalStatus::AVAILABLE)
+            ->with(['images', 'primaryImage', 'user'])
+            ->firstOrFail();
+    }
 }

@@ -2,7 +2,7 @@
     <div class="mx-auto max-w-xl text-center">
         <p class="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#b63817] sm:text-xs">Transparência &amp; carinho</p>
         <h2 id="animal-how-it-works-title" class="mt-2 font-serif text-2xl font-bold leading-tight tracking-tight text-[#17110f] sm:text-3xl">
-            Como Funciona Adotar a Amora?
+            Como Funciona Adotar {{ $animal->name }}?
         </h2>
         <p class="mt-2 text-xs leading-5 text-[#704f45] sm:text-sm">
             Nosso processo é desenhado para proteger o pet e dar suporte total aos novos tutores em 4 etapas leves e ágeis.
