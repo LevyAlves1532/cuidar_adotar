@@ -14,7 +14,7 @@
             </div>
 
             <div class="mt-4 space-y-3 text-[11px] leading-5 text-[#704f45] sm:text-xs">
-                <p>{{ $animal->description }}</p>
+                {!! $animal->description !!}
                 <p>{{ $animal->name }} está aguardando um lar responsável, seguro e cheio de afeto.</p>
             </div>
         </article>
