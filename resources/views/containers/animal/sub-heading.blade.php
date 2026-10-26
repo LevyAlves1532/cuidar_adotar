@@ -23,14 +23,9 @@
                 <span class="hidden sm:inline">Voltar ao Catálogo</span>
                 <span class="sm:hidden">Voltar</span>
             </a>
-                <button type="button" class="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#8c6b60] shadow-sm transition hover:text-[#b63817] focus:outline-none focus:ring-2 focus:ring-[#b63817]" aria-label="Compartilhar {{ $animal->name }}">
+            <button type="button" data-share-animal-profile data-share-title="{{ $animal->name }} | Cuidar & Adotar" data-share-text="Conheça {{ $animal->name }}, disponível para adoção responsável." class="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#8c6b60] shadow-sm transition hover:text-[#b63817] focus:outline-none focus:ring-2 focus:ring-[#b63817]" aria-label="Compartilhar {{ $animal->name }}">
                 <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <circle cx="18" cy="5" r="2" /><circle cx="6" cy="12" r="2" /><circle cx="18" cy="19" r="2" /><path stroke-linecap="round" d="m8 11 8-5M8 13l8 5" />
-                </svg>
-            </button>
-                <button type="button" class="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#b63817] shadow-sm transition hover:bg-[#fff0eb] focus:outline-none focus:ring-2 focus:ring-[#b63817]" aria-label="Favoritar {{ $animal->name }}">
-                <svg class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 21s-7.2-4.4-9.5-8.7C.7 8.8 2.3 5 6 4.3c2.2-.4 4.1.7 6 2.6 1.9-1.9 3.8-3 6-2.6 3.7.7 5.3 4.5 3.5 8C19.2 16.6 12 21 12 21Z" />
                 </svg>
             </button>
         </div>
