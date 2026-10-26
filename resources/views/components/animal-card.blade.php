@@ -33,11 +33,6 @@
             ])
             @endcomponent
         </div>
-        <button type="button" class="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-[#8c6b60] shadow-sm transition hover:bg-white hover:text-[#b63817] focus:outline-none focus:ring-2 focus:ring-[#b63817]" aria-label="Favoritar {{ $name }}">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M20.8 8.8c0 4.2-4.8 7.2-8.8 10.2C8 16 3.2 13 3.2 8.8A4.3 4.3 0 0 1 7.5 4.5c1.7 0 3.3 1 4.5 2.4 1.2-1.4 2.8-2.4 4.5-2.4a4.3 4.3 0 0 1 4.3 4.3Z" />
-            </svg>
-        </button>
     </div>
 
     <div class="flex flex-1 flex-col px-1 pt-2">
@@ -65,13 +60,12 @@
                 {{ $size }}
             </span>
         </div>
-        <p class="mt-1 inline-flex items-center gap-1 truncate text-[10px] text-[#704f45] fill-[#704f45] sm:text-[11px]" title="{{ $location }}">
+        <p class="mb-4 mt-1 inline-flex items-center gap-1 truncate text-[10px] text-[#704f45] fill-[#704f45] sm:text-[11px]" title="{{ $location }}">
             <span aria-hidden="true">
                 <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/></svg>
             </span>
             {{ $location }}
         </p>
-        <p class="mt-1 mb-4 line-clamp-2 min-h-8 text-[10px] leading-4 text-[#8c6b60] sm:text-[11px]">{{ $description }}</p>
 
         @component('components.button', [
             'label' => "Conhecer {$name}",
