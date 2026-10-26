@@ -1,6 +1,32 @@
 (function () {
 	const gallery = document.querySelector('[data-animal-gallery]');
 	const interestModal = document.querySelector('[data-adoption-interest-modal]');
+	const shareButton = document.querySelector('[data-share-animal-profile]')?.closest('button');
+	const shareFeedback = document.querySelector('[data-share-feedback]');
+
+	shareButton?.addEventListener('click', async () => {
+		const shareData = {
+			title: shareButton.querySelector('[data-share-animal-profile]')?.dataset.shareTitle ?? document.title,
+			text: shareButton.querySelector('[data-share-animal-profile]')?.dataset.shareText ?? '',
+			url: window.location.href,
+		};
+
+		try {
+			if (navigator.share) {
+				await navigator.share(shareData);
+				return;
+			}
+
+			await navigator.clipboard.writeText(shareData.url);
+			if (shareFeedback) {
+				shareFeedback.textContent = 'Link copiado! Agora é só compartilhar onde quiser.';
+			}
+		} catch (error) {
+			if (error.name !== 'AbortError' && shareFeedback) {
+				shareFeedback.textContent = 'Não foi possível compartilhar o perfil. Tente novamente.';
+			}
+		}
+	});
 
 	if (interestModal) {
 		const interestForm = interestModal.querySelector('[data-adoption-interest-form]');

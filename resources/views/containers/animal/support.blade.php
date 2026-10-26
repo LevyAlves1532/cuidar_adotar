@@ -8,28 +8,23 @@
             Não pode adotar agora? Você ainda pode transformar o destino de {{ $animal->name }}.
         </h2>
         <p class="mt-2 max-w-xl text-[11px] leading-5 text-[#704f45] sm:text-xs">
-            Compartilhe o perfil dela nas suas redes sociais ou apadrinhe os custos mensais de vacinas e ração enquanto ela aguarda a família definitiva.
+            Compartilhe o perfil de {{ $animal->name }} nas suas redes sociais enquanto ela aguarda a família definitiva.
         </p>
 
         <div class="mt-4 flex w-full flex-col justify-center gap-2 sm:w-auto sm:flex-row">
             @component('components.button', [
                 'label' => 'Compartilhar Perfil',
-                'url' => '#',
+                'tag' => 'button',
+                'type' => 'button',
                 'color' => 'terracotta',
                 'spacing' => 'none',
                 'customClass' => 'w-full px-4 py-2 text-[10px] sm:w-auto',
             ])
+                <span data-share-animal-profile data-share-title="{{ $animal->name }} | Cuidar & Adotar" data-share-text="Conheça {{ $animal->name }}, disponível para adoção responsável." aria-hidden="true">
                 <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="2" /><circle cx="6" cy="12" r="2" /><circle cx="18" cy="19" r="2" /><path stroke-linecap="round" stroke-linejoin="round" d="m8 11 8-5m-8 7 8 5" /></svg>
-            @endcomponent
-            @component('components.button', [
-                'label' => 'Apadrinhar Cuidados de '.$animal->name,
-                'url' => '#',
-                'color' => 'white-red',
-                'spacing' => 'none',
-                'customClass' => 'w-full px-4 py-2 text-[10px] sm:w-auto',
-            ])
-                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.8 8.8c0 4.2-4.8 7.2-8.8 10.2C8 16 3.2 13 3.2 8.8A4.3 4.3 0 0 1 7.5 4.5c1.7 0 3.3 1 4.5 2.4 1.2-1.4 2.8-2.4 4.5-2.4a4.3 4.3 0 0 1 4.3 4.3Z" /></svg>
+                </span>
             @endcomponent
         </div>
+        <p data-share-feedback class="mt-2 min-h-4 text-[10px] font-medium text-[#356442]" role="status" aria-live="polite"></p>
     </div>
 </section>
