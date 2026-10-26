@@ -3,6 +3,25 @@
 	const interestModal = document.querySelector('[data-adoption-interest-modal]');
 	const shareButtons = document.querySelectorAll('[data-share-animal-profile]');
 	const shareFeedback = document.querySelector('[data-share-feedback]');
+	const formatPhoneInput = (phoneInput) => {
+		const digits = phoneInput.value.replace(/\D/g, '').slice(0, 11);
+		const formatted = digits.length <= 10
+			? digits.replace(/^(\d{2})(\d{0,4})(\d{0,4}).*/, (_, area, first, last) => {
+				return [area && `(${area})`, first, last].filter(Boolean).join(' ');
+			})
+			: digits.replace(/^(\d{2})(\d{0,5})(\d{0,4}).*/, (_, area, first, last) => {
+				return [area && `(${area})`, first && `${first}-`, last].filter(Boolean).join('');
+			});
+
+		phoneInput.value = formatted;
+	};
+
+	// Use capture so the masked value reaches Livewire before its wire:model listener.
+	document.addEventListener('input', (event) => {
+		if (event.target.matches('input[name="phone"]')) {
+			formatPhoneInput(event.target);
+		}
+	}, true);
 
 	shareButtons.forEach((shareButton) => shareButton.addEventListener('click', async () => {
 		const shareData = {
@@ -74,12 +93,6 @@
 			}
 		});
 
-		interestForm.addEventListener('submit', (event) => {
-			event.preventDefault();
-			feedback.textContent = 'Obrigado! A ONG Patinhas da Vila recebeu seu interesse e entrará em contato em breve.';
-			feedback.classList.remove('hidden');
-			interestForm.reset();
-		});
 	}
 
 	if (!gallery) {

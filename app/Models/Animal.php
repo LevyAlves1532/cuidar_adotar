@@ -42,4 +42,9 @@ class Animal extends Model
         return $this->hasOne(AnimalImage::class, 'animal_id')
             ->where('is_primary', true);
     }
+
+    public function interests(): HasMany
+    {
+        return $this->hasMany(Interest::class, 'animal_id');
+    }
 }

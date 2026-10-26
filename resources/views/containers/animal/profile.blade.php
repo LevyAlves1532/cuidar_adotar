@@ -132,62 +132,9 @@
                 </div>
             </div>
 
-            <form data-adoption-interest-form class="space-y-5 p-5 sm:p-6">
-                <div class="flex items-center gap-2 text-sm font-bold text-[#261714]">
-                    <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#f7ddd5] text-xs text-[#b63817]">1</span>
-                    Seus dados de contato
-                </div>
-
-                @component('components.input', [
-                    'id' => 'adoption-interest-name',
-                    'name' => 'name',
-                    'label' => 'Nome completo',
-                    'placeholder' => 'Como podemos chamar você?',
-                    'required' => true,
-                ])
-                @endcomponent
-
-                <div class="grid gap-4 sm:grid-cols-2">
-                    @component('components.input', [
-                        'id' => 'adoption-interest-email',
-                        'name' => 'email',
-                        'type' => 'email',
-                        'label' => 'E-mail',
-                        'placeholder' => 'voce@exemplo.com',
-                        'required' => true,
-                    ])
-                    @endcomponent
-                    @component('components.input', [
-                        'id' => 'adoption-interest-whatsapp',
-                        'name' => 'whatsapp',
-                        'type' => 'tel',
-                        'label' => 'Número do WhatsApp',
-                        'placeholder' => '(11) 99999-9999',
-                        'required' => true,
-                    ])
-                    @endcomponent
-                </div>
-
-                <div>
-                    <label for="adoption-interest-motivation" class="mb-2 block text-xs font-semibold text-[#704f45]">Motivação para a adoção</label>
-                    <textarea id="adoption-interest-motivation" name="motivation" rows="4" required placeholder="Conte um pouco sobre por que você quer adotar {{ $animal->name }}..." class="w-full resize-y rounded-xl border border-[#f0ddd5] bg-[#fffaf7] px-4 py-3 text-sm text-[#3d2a24] outline-none transition placeholder:text-[#bda399] focus:border-[#b63817] focus:ring-4 focus:ring-[#b63817]/10"></textarea>
-                </div>
-
-                <div data-adoption-interest-feedback class="hidden rounded-xl bg-[#e5f2e3] p-3 text-sm font-medium text-[#356442]" role="status"></div>
-
-                <div class="flex flex-col-reverse gap-3 pt-1 sm:flex-row sm:justify-end">
-                    <button type="button" data-adoption-interest-close class="cursor-pointer rounded-full px-5 py-2.5 text-sm font-semibold text-[#704f45] transition hover:bg-[#f8ebe6] focus:outline-none focus:ring-2 focus:ring-[#b63817]">Cancelar</button>
-                    @component('components.button', [
-                        'label' => 'Enviar manifestação',
-                        'tag' => 'button',
-                        'type' => 'submit',
-                        'color' => 'terracotta',
-                        'spacing' => 'none',
-                        'customClass' => 'w-full sm:w-auto',
-                    ])
-                    @endcomponent
-                </div>
-            </form>
+            @livewire('animal.form-interest-animal', [
+                'animal' => $animal,
+            ])
         </div>
     </div>
 </section>
