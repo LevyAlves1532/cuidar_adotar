@@ -7,6 +7,7 @@ use App\Filament\Caregiver\Resources\Animals\Pages\EditAnimal;
 use App\Filament\Caregiver\Resources\Animals\Pages\ListAnimals;
 use App\Filament\Caregiver\Resources\Animals\Pages\ViewAnimal;
 use App\Filament\Caregiver\Resources\Animals\RelationManagers\ImagesRelationManager;
+use App\Filament\Caregiver\Resources\Animals\RelationManagers\InterestsRelationManager;
 use App\Filament\Caregiver\Resources\Animals\Schemas\AnimalForm;
 use App\Filament\Caregiver\Resources\Animals\Schemas\AnimalInfolist;
 use App\Filament\Caregiver\Resources\Animals\Tables\AnimalsTable;
@@ -58,6 +59,7 @@ class AnimalResource extends Resource
     {
         return [
             ImagesRelationManager::class,
+            InterestsRelationManager::class,
         ];
     }
 
