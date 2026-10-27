@@ -4,6 +4,11 @@ use Livewire\Component;
 use App\Models\Animal;
 use App\Models\Interest;
 use Illuminate\Support\Facades\Validator;
+use App\Filament\Caregiver\Resources\Animals\Pages\ViewAnimal;
+use App\Filament\Caregiver\Resources\Interests\Pages\ViewInterest;
+use Filament\Actions\Action;
+use Filament\Notifications\Notification;
+use Filament\Support\Colors\Color;
 
 new class extends Component
 {
@@ -55,13 +60,26 @@ new class extends Component
             'motivation.max' => 'A motivação deve ter no máximo 3000 caracteres.',
         ])->validate();
 
-        Interest::create([
+        $interest = Interest::create([
             'animal_id' => $this->animal->id,
             'name' => $validated['name'],
             'email' => $validated['email'],
             'phone' => $phone,
             'message' => $validated['motivation'],
         ]);
+
+        Notification::make()
+            ->title('O usuário ' . $this->name . ' registrou interesse no ' . $this->animal->name)
+            ->actions([
+                Action::make('go_animal')
+                    ->label('Ver ' . $this->animal->name)
+                    ->url(ViewAnimal::getUrl(['record' => $this->animal->id])),
+                Action::make('go_interest')
+                    ->label('Ver ' . $this->name)
+                    ->url(ViewInterest::getUrl(['record' => $interest->id]))
+                    ->color(Color::Green),
+            ])
+            ->sendToDatabase($this->animal->user);
 
         $this->reset('name', 'email', 'phone', 'motivation');
         $this->resetValidation();

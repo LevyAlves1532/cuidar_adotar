@@ -61,6 +61,7 @@ class CaregiverPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
+            ->databaseNotifications()
             ->renderHook(
                 PanelsRenderHook::BODY_START,
                 function (): string {
