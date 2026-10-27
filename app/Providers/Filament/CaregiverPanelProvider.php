@@ -44,8 +44,8 @@ class CaregiverPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Caregiver/Widgets'), for: 'App\Filament\Caregiver\Widgets')
             ->widgets([
-                AccountWidget::class,
-                FilamentInfoWidget::class,
+                // AccountWidget::class,
+                // FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
