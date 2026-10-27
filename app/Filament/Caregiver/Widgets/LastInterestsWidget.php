@@ -12,6 +12,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 
 class LastInterestsWidget extends TableWidget
 {
@@ -22,6 +23,7 @@ class LastInterestsWidget extends TableWidget
         return $table
             ->heading('Últimos interesses')
             ->query(fn (): Builder => Interest::query()
+                ->whereHas('animal', fn ($q) => $q->where('user_id', Auth::id()))
                 ->orderBy('created_at', 'desc')
                 ->limit(5))
             ->paginated(false)

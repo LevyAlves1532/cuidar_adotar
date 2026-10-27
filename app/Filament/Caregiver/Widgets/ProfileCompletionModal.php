@@ -58,6 +58,13 @@ class ProfileCompletionModal extends Widget implements HasActions, HasSchemas
                 TextInput::make('city')
                     ->label('Cidade')
                     ->maxLength(255)
+                    ->datalist(fn (): array => User::query()
+                        ->whereNotNull('city')
+                        ->where('city', '!=', '')
+                        ->distinct()
+                        ->orderBy('city')
+                        ->pluck('city')
+                        ->all())
                     ->required(),
                 TextInput::make('phone')
                     ->label('Telefone')
@@ -75,7 +82,7 @@ class ProfileCompletionModal extends Widget implements HasActions, HasSchemas
                 /** @var User $user */
                 $user = Auth::user();
                 $user->update($data);
-                
+
                 Notification::make()
                     ->title('Cadastro finalizado com sucesso!')
                     ->success()

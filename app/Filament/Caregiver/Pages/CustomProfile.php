@@ -3,6 +3,7 @@
 namespace App\Filament\Caregiver\Pages;
 
 use App\Enums\ResponsibleType;
+use App\Models\User;
 use Filament\Auth\Pages\EditProfile;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -33,6 +34,13 @@ class CustomProfile extends EditProfile
                         TextInput::make('city')
                             ->label('Cidade')
                             ->maxLength(255)
+                            ->datalist(fn (): array => User::query()
+                                ->whereNotNull('city')
+                                ->where('city', '!=', '')
+                                ->distinct()
+                                ->orderBy('city')
+                                ->pluck('city')
+                                ->all())
                             ->required(),
                         TextInput::make('phone')
                             ->label('Telefone')
