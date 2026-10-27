@@ -15,3 +15,6 @@ Route::get('/catalogo', [PagesController::class, 'catalog'])
 
 Route::get('/animal/{animalId}', [PagesController::class, 'animal'])
     ->name('animal');
+
+Route::get('/sobre-o-projeto', [PagesController::class, 'aboutUs'])
+    ->name('about-us');

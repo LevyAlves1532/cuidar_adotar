@@ -26,4 +26,9 @@ class PagesController extends Controller
 
         return view('pages.animal', $data);
     }
+
+    public function aboutUs()
+    {
+        return view('pages.about-us');
+    }
 }

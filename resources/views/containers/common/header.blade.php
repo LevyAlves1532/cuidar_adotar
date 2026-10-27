@@ -20,7 +20,7 @@
                 <a href="{{ route('catalog') }}" class="rounded-md px-2 py-2 text-sm font-medium transition hover:bg-[#f4e8e1] hover:text-[#b63817] lg:px-2 lg:py-1">Quero Adotar</a>
                 <a href="{{ route('home') }}#como-funciona" class="rounded-md px-2 py-2 text-sm font-medium transition hover:bg-[#f4e8e1] hover:text-[#b63817] lg:px-2 lg:py-1">Como Funciona</a>
                 <a href="{{ route('filament.caregiver.auth.login') }}" class="rounded-md px-2 py-2 text-sm font-medium transition hover:bg-[#f4e8e1] hover:text-[#b63817] lg:px-2 lg:py-1">Cadastrar Animal</a>
-                <a href="#sobre" class="rounded-md px-2 py-2 text-sm font-medium transition hover:bg-[#f4e8e1] hover:text-[#b63817] lg:px-2 lg:py-1">Sobre Nós</a>
+                <a href="{{ route('about-us') }}" class="rounded-md px-2 py-2 text-sm font-medium transition hover:bg-[#f4e8e1] hover:text-[#b63817] lg:px-2 lg:py-1">Sobre Nós</a>
             </div>
             @component('components.button', [
                 'url' => route('catalog'),
