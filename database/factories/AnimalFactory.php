@@ -21,15 +21,15 @@ class AnimalFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory(),
+            'user_id' => User::query()->inRandomOrder()->value('id') ?? User::factory(),
             'name' => fake()->firstName(),
-            'species' => Species::DOG,
-            'sex' => Sex::FEMALE,
-            'age_group' => AgeGroup::ADULT,
-            'size' => Size::MEDIUM,
+            'species' => fake()->randomElement(Species::cases()),
+            'sex' => fake()->randomElement(Sex::cases()),
+            'age_group' => fake()->randomElement(AgeGroup::cases()),
+            'size' => fake()->randomElement(Size::cases()),
             'city' => fake()->city(),
             'description' => fake()->sentence(),
-            'status' => AnimalStatus::AVAILABLE,
+            'status' => fake()->randomElement(AnimalStatus::cases()),
         ];
     }
 

@@ -29,7 +29,7 @@
 
         <p class="mt-5 text-center text-xs leading-5 text-[#704f45] sm:mt-6 sm:text-sm">
             Ainda com dúvidas?
-            <a href="#guia-adotante" class="inline-flex items-center gap-1 font-semibold text-[#b63817] transition hover:text-[#922d12] focus:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#b63817] focus-visible:ring-offset-2">
+            <a href="{{ asset('pdf/cuidar_adortar_guia_do_adotante.pdf') }}" target="_blank" class="inline-flex items-center gap-1 font-semibold text-[#b63817] transition hover:text-[#922d12] focus:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#b63817] focus-visible:ring-offset-2">
                 Consulte nosso Guia Completo do Adotante
                 <span aria-hidden="true">→</span>
             </a>

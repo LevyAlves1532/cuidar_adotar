@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\ResponsibleType;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
@@ -27,6 +28,10 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'password' => static::$password ??= Hash::make('password'),
+            'responsible_type' => fake()->randomElement(ResponsibleType::cases()),
+            'city' => fake()->city(),
+            'phone' => fake()->phoneNumber(),
+            'description' => fake()->sentence(),
         ];
     }
 }
