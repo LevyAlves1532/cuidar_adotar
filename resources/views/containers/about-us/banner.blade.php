@@ -25,23 +25,13 @@
             </h1>
 
             <p class="mt-5 max-w-xl text-sm leading-6 text-[#704f45] sm:text-base">
-                O Cuidar & Adotar nasceu da urgência de transformar resgates solitários em conexões duradouras. No Brasil, milhões de cães e gatos esperam por uma família enquanto protetores dedicam suas vidas sem infraestrutura adequada. Criamos uma ponte digital segura, humana e ética.
+                O Cuidar & Adotar é um projeto de atividade extensionista da faculdade que utiliza a tecnologia para conectar animais a pessoas interessadas em adoção responsável, facilitando a divulgação e contribuindo para reduzir o abandono animal.
             </p>
 
             <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
                 @component('components.button', [
-                    'url' => '#pilares',
-                    'label' => 'Conhecer Nossos Pilares',
-                    'spacing' => 'none',
-                ])
-                    @slot('iconLeft')
-                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path stroke-linecap="round" d="m12 7 1.4 3.1L17 11.5l-3.6 1.4L12 16l-1.4-3.1L7 11.5l3.6-1.4L12 7Z" /></svg>
-                    @endslot
-                @endcomponent
-                @component('components.button', [
                     'url' => '#quem-faz-acontecer',
                     'label' => 'Quem Faz Acontecer',
-                    'color' => 'white',
                     'spacing' => 'none',
                 ])
                     @slot('iconLeft')

@@ -13,25 +13,25 @@
             Nossos fundadores e guardiões da
             <span class="block font-serif font-semibold italic text-[#b63817]">causa</span>
         </h2>
-        <p class="mt-3 max-w-xl text-sm leading-6 text-[#704f45] sm:text-base">
+        {{-- <p class="mt-3 max-w-xl text-sm leading-6 text-[#704f45] sm:text-base">
             Uma equipe multidisciplinar de médicos veterinários, designers de experiência humana e voluntários dedicados a construir lares definitivos.
-        </p>
+        </p> --}}
     </div>
 
     <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         @component('components.founder-card', [
-            'name' => 'Dra. Clara Mendonça',
-            'role' => 'Co-fundadora & Médica Veterinária Comportamentalista',
-            'specialty' => 'CRMV-SP',
-            'quote' => 'Cuidar da saúde física é vital, mas entender a alma e a adaptação do pet é o que garante um lar definitivo.',
-            'image' => 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=85',
-            'imageAlt' => 'Dra. Clara Mendonça segurando um gato',
-            'footer' => '+12 anos em bem-estar animal',
+            'name' => 'Lêvy P. Alves',
+            'role' => 'Co-fundador & Cientista da Computação',
+            'specialty' => 'Desenvolvedor Fullstack',
+            'quote' => 'Criamos um software que aproxima pessoas interessadas na adoção de ONGs, abrigos e protetores por meio de animais que precisam de todo o carinho e cuidado.',
+            'image' => asset('images/levy.jpeg'),
+            'imageAlt' => 'Desenvolvedor Lêvy P. Alves',
+            'footer' => 'Especilalista em desenvolvimento de websites',
             'badgeColor' => 'bg-[#d9f0d2] text-[#356442]',
         ])
         @endcomponent
 
-        @component('components.founder-card', [
+        {{-- @component('components.founder-card', [
             'name' => 'Gabriel Fontana',
             'role' => 'Co-fundador & Designer de Produto',
             'specialty' => 'Tech & UX',
@@ -53,6 +53,6 @@
             'footer' => 'Rede com 350+ abrigos ativos',
             'badgeColor' => 'bg-[#ffe5c5] text-[#a96521]',
         ])
-        @endcomponent
+        @endcomponent --}}
     </div>
 </section>

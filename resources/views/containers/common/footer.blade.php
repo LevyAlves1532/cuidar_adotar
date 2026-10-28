@@ -29,7 +29,7 @@
                 <a href="{{ route('catalog') }}" class="transition hover:text-white">Quero Adotar</a>
                 <a href="{{ route('home') }}#como-funciona" class="transition hover:text-white">Como Funciona</a>
                 <a href="{{ route('filament.caregiver.auth.login') }}" class="transition hover:text-white">Cadastrar Animal</a>
-                <a href="#sobre" class="transition hover:text-white">Sobre o Projeto</a>
+                <a href="{{ route('about-us') }}" class="transition hover:text-white">Sobre o Projeto</a>
             </nav>
         </div>
 
