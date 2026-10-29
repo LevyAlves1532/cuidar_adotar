@@ -7,6 +7,7 @@
     'type' => 'button',
     'spacing' => 'default',
     'customClass' => '',
+    'target' => '_self',
 ])
 
 @php
@@ -29,7 +30,7 @@
         @break
 
     @default
-        <a href="{{ $url }}" {{ $attributes->merge(['class' => $classSpacing.' inline-flex ' . $customClass . ' items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 '.$classColor]) }}>
+        <a href="{{ $url }}" target="{{ $target }}" {{ $attributes->merge(['class' => $classSpacing.' inline-flex ' . $customClass . ' items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 '.$classColor]) }}>
             {{ $iconLeft ?: $slot }}
             {{ $label }}
         </a>

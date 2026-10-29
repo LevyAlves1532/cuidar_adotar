@@ -12,18 +12,18 @@
         </p>
 
         <div class="mt-4 flex w-full flex-col justify-center gap-2 sm:w-auto sm:flex-row">
-            @component('components.button', [
-                'label' => 'Compartilhar Perfil',
-                'tag' => 'button',
-                'type' => 'button',
-                'color' => 'terracotta',
-                'spacing' => 'none',
-                'customClass' => 'w-full px-4 py-2 text-[10px] sm:w-auto',
-            ])
-                <span data-share-animal-profile data-share-title="{{ $animal->name }} | Cuidar & Adotar" data-share-text="Conheça {{ $animal->name }}, disponível para adoção responsável." aria-hidden="true">
-                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="2" /><circle cx="6" cy="12" r="2" /><circle cx="18" cy="19" r="2" /><path stroke-linecap="round" stroke-linejoin="round" d="m8 11 8-5m-8 7 8 5" /></svg>
-                </span>
-            @endcomponent
+            <span data-share-animal-profile data-share-title="{{ $animal->name }} | Cuidar & Adotar" data-share-text="Conheça {{ $animal->name }}, disponível para adoção responsável." aria-hidden="true">
+                @component('components.button', [
+                    'label' => 'Compartilhar Perfil',
+                    'tag' => 'button',
+                    'type' => 'button',
+                    'color' => 'terracotta',
+                    'spacing' => 'none',
+                    'customClass' => 'w-full px-4 py-2 text-[10px] sm:w-auto',
+                ])
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="2" /><circle cx="6" cy="12" r="2" /><circle cx="18" cy="19" r="2" /><path stroke-linecap="round" stroke-linejoin="round" d="m8 11 8-5m-8 7 8 5" /></svg>
+                @endcomponent
+            </span>
         </div>
         <p data-share-feedback class="mt-2 min-h-4 text-[10px] font-medium text-[#356442]" role="status" aria-live="polite"></p>
     </div>

@@ -82,7 +82,8 @@
         <div class="flex flex-wrap gap-2 sm:shrink-0">
             @component('components.button', [
                 'label' => 'Ler Guia Completo',
-                'url' => '#requisitos-tutela',
+                'url' => asset('pdf/cuidar_adortar_guia_do_adotante.pdf'),
+                'target' => '_blank',
                 'color' => 'white-red',
                 'spacing' => 'none',
                 'customClass' => 'px-4 py-2 text-[10px]',
