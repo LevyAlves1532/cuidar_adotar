@@ -1,58 +1,175 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Cuidar & Adotar
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Plataforma web para aproximar pessoas interessadas em adotar animais de ONGs, abrigos e protetores independentes. O projeto foi desenvolvido como trabalho final de uma atividade extensionista e busca incentivar a adoção responsável por meio de um catálogo público e de uma área de gerenciamento para os responsáveis pelos animais.
 
-## About Laravel
+## ✨ Funcionalidades
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Para visitantes
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Página inicial com orientações sobre adoção responsável, etapas do processo, depoimentos e perguntas frequentes.
+- Catálogo público de animais disponíveis para adoção.
+- Busca por nome, descrição ou cidade.
+- Filtros por espécie, sexo, faixa etária, porte e cidade.
+- Ordenação por animais mais recentes, mais antigos ou nome.
+- Carregamento incremental dos resultados, em blocos de seis animais.
+- Página de detalhes com perfil, história e imagens do animal.
+- Formulário de manifestação de interesse em uma adoção.
+- Validação e normalização do telefone informado.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Para cuidadores
 
-## Learning Laravel
+- Área autenticada em `/cuidador`, construída com Filament.
+- Cadastro, edição, visualização e exclusão dos próprios animais.
+- Gerenciamento de imagens e definição de imagem principal.
+- Acompanhamento dos interesses recebidos para os animais cadastrados.
+- Perfil com tipo de responsável, cidade, telefone e descrição.
+- Dashboard com estatísticas, últimos contatos e gráfico de interesses.
+- Notificações no painel para novas manifestações de interesse.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Os tipos de responsáveis são **ONG**, **abrigo** e **protetor independente**. Os status dos animais são **disponível**, **em processo** e **adotado**.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Tecnologias utilizadas
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+| Tecnologia | Finalidade |
+| :--- | :--- |
+| PHP 8.3+ | Linguagem principal |
+| Laravel 13 | Framework da aplicação |
+| Filament 5 | Painel dos cuidadores |
+| Livewire | Componentes interativos |
+| Blade | Templates e componentes de interface |
+| Tailwind CSS 4 | Estilização responsiva |
+| Vite 8 | Bundling dos assets |
+| SQLite | Banco padrão de desenvolvimento |
+| Pest 4 | Testes automatizados |
 
-## Agentic Development
+## 📋 Requisitos
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- PHP **8.3 ou superior** com suporte a SQLite.
+- Composer.
+- Node.js e npm.
+- Permissão de escrita em `storage/` e `bootstrap/cache/`.
+
+## 🚀 Instalação
+
+1. Instale as dependências e execute o script de configuração:
+
+   ```bash
+   composer run setup
+   ```
+
+   O comando instala as dependências PHP e JavaScript, cria o `.env`, gera a chave, executa as migrations e gera os assets.
+
+2. Crie o link para os arquivos públicos enviados pelo painel:
+
+   ```bash
+   php artisan storage:link
+   ```
+
+3. O projeto usa SQLite por padrão. Caso o banco ainda não exista:
+
+   ```bash
+   touch database/database.sqlite
+   php artisan migrate
+   ```
+
+## ▶️ Executando localmente
+
+Para iniciar o ambiente completo:
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+composer run dev
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Ou execute os processos separadamente:
 
-## Contributing
+```bash
+php artisan serve
+npm run dev
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Depois, acesse [http://localhost:8000](http://localhost:8000).
 
-## Code of Conduct
+Para gerar apenas os assets de produção, use `npm run build`.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🌱 Dados de exemplo
 
-## Security Vulnerabilities
+O seeder cria 10 usuários e 100 animais fictícios:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+php artisan db:seed
+```
 
-## License
+Para recriar o banco de desenvolvimento com dados de exemplo:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan migrate:fresh --seed
+```
+
+Não há uma conta padrão com credenciais documentadas; o cadastro pode ser feito em `/cuidador/register`.
+
+## 🧭 Rotas principais
+
+| Método | URL | Descrição |
+| :--- | :--- | :--- |
+| `GET` | `/` | Página inicial |
+| `GET` | `/catalogo` | Catálogo de animais disponíveis |
+| `GET` | `/animal/{id}` | Detalhes de um animal disponível |
+| `GET` | `/sobre-o-projeto` | Informações sobre o projeto |
+| `GET` | `/cuidador` | Dashboard dos cuidadores |
+| `GET` | `/cuidador/login` | Login do painel |
+| `GET` | `/cuidador/register` | Cadastro de cuidador |
+
+As rotas públicas exibem somente animais com status disponível. O formulário de interesse não exige uma conta: os dados são salvos e uma notificação é disponibilizada ao responsável no painel.
+
+## 🧱 Organização do projeto
+
+```text
+app/
+├── Enums/                 # Espécie, sexo, porte, idade, status e responsável
+├── Filament/Caregiver/    # Recursos, páginas e widgets do painel
+├── Http/Controllers/      # Controladores das páginas públicas
+├── Models/                # User, Animal, AnimalImage e Interest
+├── Policies/              # Regras de autorização
+├── Repositories/          # Consultas reutilizáveis
+└── UseCases/Pages/        # Casos de uso das páginas
+
+database/                  # Factories, migrations e seeders
+resources/views/           # Layouts, páginas e componentes Blade
+routes/web.php             # Rotas públicas
+tests/                     # Testes de feature e unitários
+```
+
+## 🗃️ Principais entidades
+
+- **User:** cuidador ou responsável que cadastra animais.
+- **Animal:** animal com espécie, sexo, idade, porte, cidade, descrição e status.
+- **AnimalImage:** imagem associada a um animal, com controle de imagem principal.
+- **Interest:** manifestação de interesse enviada por uma pessoa visitante.
+
+Um usuário pode cadastrar vários animais. Cada animal pode ter várias imagens e manifestações de interesse.
+
+## 🧪 Testes
+
+Execute a suíte automatizada com:
+
+```bash
+composer test
+```
+
+Os testes cobrem exibição de animais disponíveis, formulário de interesse, normalização de telefone, filtros, ordenação, carregamento incremental do catálogo, contagens da página inicial e isolamento dos interesses entre cuidadores.
+
+## ⚠️ Observações
+
+- O projeto está configurado para desenvolvimento local e usa SQLite por padrão.
+- O registro do painel está habilitado e qualquer usuário autenticado pode acessá-lo; não existe separação adicional entre perfis administrativos e cuidadores.
+- O envio de interesse é interno à plataforma: os dados são armazenados no banco e notificados no painel, sem integração externa de e-mail ou WhatsApp.
+- As imagens dependem do link criado por `php artisan storage:link`.
+- Antes de usar o projeto em produção, revise autenticação, autorização, validação, armazenamento de imagens, variáveis de ambiente e credenciais.
+
+## 📄 Referência acadêmica
+
+A ideia e os objetivos da aplicação estão descritos em `Atividade Extensionista II - Trabalho Final.pdf`, disponível na raiz do repositório.
+
+## 📜 Licença
+
+Este projeto utiliza a licença MIT, conforme definida no arquivo `composer.json`.
